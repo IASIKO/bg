@@ -1,0 +1,12 @@
+input[type=search], select {
+    width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+::placeholder{
+    font-size: medium;
+}

@@ -1,0 +1,23 @@
+import React from "react";
+import styles from "./Header.module.css";
+import Logo from "./Logo";
+import Inputsearch from "./Inputsearch";
+import EcommerceNavbar from "./EcommerceNavbar/EcommerceNavbar";
+
+const Header = () => {
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <Logo/>
+      </div>
+      <div className={styles.container}>
+        <Inputsearch />
+      </div>
+      <div className={styles.container}>
+        <EcommerceNavbar/>
+      </div>
+    </div>
+  );
+};
+
+export default Header;

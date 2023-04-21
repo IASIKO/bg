@@ -1,0 +1,11 @@
+.wrapper {
+    height: 85px;
+    background-color: #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    padding: 30px;
+}
