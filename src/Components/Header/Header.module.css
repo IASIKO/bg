@@ -1,9 +1,10 @@
 .wrapper {
     height: 85px;
-    background-color: #3a3a3a;
+    background-color: rgb(36, 44, 52);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .container {

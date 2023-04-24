@@ -4,7 +4,6 @@ input[type=search], select {
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
   }
 
 ::placeholder{

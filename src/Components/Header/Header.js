@@ -3,9 +3,12 @@ import styles from "./Header.module.css";
 import Logo from "./Logo";
 import Inputsearch from "./Inputsearch";
 import EcommerceNavbar from "./EcommerceNavbar/EcommerceNavbar";
+import Cover from "./Cover";
 
 const Header = () => {
   return (
+    <>
+    <Cover />
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <Logo/>
@@ -17,6 +20,7 @@ const Header = () => {
         <EcommerceNavbar/>
       </div>
     </div>
+    </>
   );
 };
 
