@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import Inputsearch from "./Inputsearch";
 import EcommerceNavbar from "./EcommerceNavbar/EcommerceNavbar";
 import Cover from "./Cover";
+import Navbar from "./Navbar/Navbar";
 
 const Header = () => {
   return (
@@ -19,6 +20,7 @@ const Header = () => {
           <EcommerceNavbar />
         </div>
       </div>
+      <Navbar />
       <Cover />
     </>
   );

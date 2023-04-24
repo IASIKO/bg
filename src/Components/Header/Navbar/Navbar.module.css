@@ -1,0 +1,35 @@
+.navbarWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.infoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.infoContainer span {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.page{
+    text-decoration: none;
+    color: rgb(15, 15, 15);
+    font-weight: 650;
+    font-size: 16px;
+    padding: 20px;
+}
+
+.page img {
+    width: 20px;
+    text-align: center;
+}
