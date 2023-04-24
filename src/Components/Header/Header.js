@@ -8,18 +8,18 @@ import Cover from "./Cover";
 const Header = () => {
   return (
     <>
-    <Cover />
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <Logo/>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <Logo />
+        </div>
+        <div className={styles.container}>
+          <Inputsearch />
+        </div>
+        <div className={styles.container}>
+          <EcommerceNavbar />
+        </div>
       </div>
-      <div className={styles.container}>
-        <Inputsearch />
-      </div>
-      <div className={styles.container}>
-        <EcommerceNavbar/>
-      </div>
-    </div>
+      <Cover />
     </>
   );
 };

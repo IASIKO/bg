@@ -1,8 +1,9 @@
 .cover {
-    position: absolute;
-}
-
-.cover img {
+    background-image: url(../../Assets/bgcover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
-    height: auto;
+    height: 90vh;
+    overflow: hidden;
+    background-attachment: fixed;
 }
