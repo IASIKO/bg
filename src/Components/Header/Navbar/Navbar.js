@@ -22,7 +22,7 @@ const Navbar = () => {
           Contact us
         </a>
         <a href="#" className={styles.page}>
-          <img src={UK} />
+          <img src={UK} alt="UK"/>
           ENG
         </a>
       </div>

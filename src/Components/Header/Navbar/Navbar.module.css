@@ -10,6 +10,10 @@
     justify-content: space-around;
 }
 
+.pageContainer a:hover {
+    color: rgb(241,132,54);
+}
+
 .infoContainer{
     display: flex;
     align-items: center;
@@ -31,5 +35,5 @@
 
 .page img {
     width: 20px;
-    text-align: center;
+    transform: translateX(-50%);
 }
