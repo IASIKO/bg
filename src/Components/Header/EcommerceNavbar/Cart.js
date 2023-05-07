@@ -4,8 +4,9 @@ import {ImCart} from 'react-icons/im'
 
 const Cart = () => {
   return (
-    <div>
-      <ImCart className={styles.icon}/>
+    <div  className={styles.icon}>
+      <ImCart/>
+      <span>0</span>
     </div>
   )
 }

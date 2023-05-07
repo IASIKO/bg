@@ -48,14 +48,14 @@ const Navbar = () => {
       </div>
 
       <div className={styles.infoContainer}>
-        <span>
+        <span >
           <FaPhoneAlt /> 999 999 999
         </span>
-        <span>
+        <span className={styles.icon}>
           <BsFacebook />
         </span>
         <span>
-          <GrInstagram />
+          <GrInstagram className={styles.icon}/>
         </span>
       </div>
     </div>
