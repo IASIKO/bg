@@ -10,9 +10,24 @@
     justify-content: space-around;
 }
 
+.pageTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.pageTitle div {
+    width: 100%;
+    height: 5px;
+}
+
+.pageTitle div:hover {
+    background-color: rgb(241,132,54);
+}
+
 .pageContainer a:hover {
     color: rgb(241,132,54);
 }
+
 
 .infoContainer{
     display: flex;
@@ -32,6 +47,7 @@
     font-size: 16px;
     padding: 20px;
 }
+
 
 .page img {
     width: 20px;

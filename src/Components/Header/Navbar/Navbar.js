@@ -9,29 +9,46 @@ const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <a href="#" className={styles.page}>
-          Home
-        </a>
-        <a href="#" className={styles.page}>
-          Board Games
-        </a>
-        <a href="#" className={styles.page}>
-          Gift Cards
-        </a>
-        <a href="#" className={styles.page}>
-          Contact us
-        </a>
-        <a href="#" className={styles.page}>
-          <img src={UK} alt="UK"/>
-          ENG
-        </a>
+        <div className={styles.pageTitle}>
+          <a href="#" className={styles.page}>
+            Home
+          </a>
+          <div></div>
+        </div>
+
+        <div className={styles.pageTitle}>
+          <a href="#" className={styles.page}>
+            Board Games
+          </a>
+          <div></div>
+        </div>
+
+        <div className={styles.pageTitle}>
+          <a href="#" className={styles.page}>
+            Gift Cards
+          </a>
+          <div></div>
+        </div>
+
+        <div className={styles.pageTitle}>
+          <a href="#" className={styles.page}>
+            Contact us
+          </a>
+          <div></div>
+        </div>
+
+        <div className={styles.pageTitle}>
+          <a href="#" className={styles.page}>
+            <img src={UK} alt="UK" />
+            ENG
+          </a>
+          <div></div>
+        </div>
       </div>
 
       <div className={styles.infoContainer}>
         <span>
-          <FaPhoneAlt />
-          {" "}
-          999 999 999
+          <FaPhoneAlt /> 999 999 999
         </span>
         <span>
           <BsFacebook />
