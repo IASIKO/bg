@@ -9,36 +9,37 @@ const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
+
         <div className={styles.pageTitle}>
-          <a href="#" className={styles.page}>
+          <a href="#">
             Home
           </a>
           <div></div>
         </div>
 
         <div className={styles.pageTitle}>
-          <a href="#" className={styles.page}>
+          <a href="#">
             Board Games
           </a>
           <div></div>
         </div>
 
         <div className={styles.pageTitle}>
-          <a href="#" className={styles.page}>
+          <a href="#">
             Gift Cards
           </a>
           <div></div>
         </div>
 
         <div className={styles.pageTitle}>
-          <a href="#" className={styles.page}>
+          <a href="#">
             Contact us
           </a>
           <div></div>
         </div>
 
         <div className={styles.pageTitle}>
-          <a href="#" className={styles.page}>
+          <a href="#">
             <img src={UK} alt="UK" />
             ENG
           </a>
