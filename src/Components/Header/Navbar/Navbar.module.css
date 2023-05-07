@@ -38,9 +38,9 @@
     height: 4px;
   }
   
-  /* .pageTitle div:hover {
+  .pageTitle div:hover {
     background-color: rgb(241, 132, 54);
-  } */
+  }
 
 .infoContainer {
   display: flex;
