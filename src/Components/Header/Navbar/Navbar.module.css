@@ -23,7 +23,7 @@
   padding: 20px;
 }
 
-.pageTitle a:hover {
+.pageTitle:hover a {
     color: rgb(241, 132, 54);
   }
 
@@ -38,7 +38,7 @@
     height: 4px;
   }
   
-  .pageTitle div:hover {
+  .pageTitle:hover div{
     background-color: rgb(241, 132, 54);
   }
 
