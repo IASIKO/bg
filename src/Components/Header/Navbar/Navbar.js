@@ -4,58 +4,52 @@ import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
+
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
+          <div className={styles.pageTitle} >
+            <Link to="/">Home</Link>
+            <div></div>
+          </div>
 
-        <div className={styles.pageTitle}>
-          <a href="#">
-            Home
-          </a>
-          <div></div>
-        </div>
+          <div className={styles.pageTitle}>
+            <Link to="/boardgames">Board Games</Link>
+            <div></div>
+          </div>
 
-        <div className={styles.pageTitle}>
-          <a href="#">
-            Board Games
-          </a>
-          <div></div>
-        </div>
+          <div className={styles.pageTitle}>
+            <Link to="/giftcards">Gift Cards</Link>
+            <div></div>
+          </div>
 
-        <div className={styles.pageTitle}>
-          <a href="#">
-            Gift Cards
-          </a>
-          <div></div>
-        </div>
+          <div className={styles.pageTitle}>
+            <Link to="/contact">Contact us</Link>
+            <div></div>
+          </div>
 
-        <div className={styles.pageTitle}>
-          <a href="#">
-            Contact us
-          </a>
-          <div></div>
-        </div>
-
-        <div className={styles.pageTitle}>
-          <a href="#">
-            <img src={UK} alt="UK" />
-            ENG
-          </a>
-          <div></div>
-        </div>
+          <div className={styles.pageTitle}>
+            <a href="#">
+              <img src={UK} alt="UK" />
+              ENG
+            </a>
+            <div></div>
+          </div>
       </div>
 
       <div className={styles.infoContainer}>
-        <span >
+        <span>
           <FaPhoneAlt /> 999 999 999
         </span>
         <span className={styles.icon}>
           <BsFacebook />
         </span>
         <span>
-          <GrInstagram className={styles.icon}/>
+          <GrInstagram className={styles.icon} />
         </span>
       </div>
     </div>
