@@ -4,10 +4,9 @@ import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate()
 
   return (
     <div className={styles.navbarWrapper}>

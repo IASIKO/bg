@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Header from "../Header/Header";
 
 const BoardGamesPage = () => {
   return (
-    <div>BoardGamesPage</div>
-  )
-}
+    <>
+      <Header/>
+    </>
+  );
+};
 
-export default BoardGamesPage
+export default BoardGamesPage;
