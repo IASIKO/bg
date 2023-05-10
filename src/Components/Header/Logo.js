@@ -8,7 +8,7 @@ const Logo = () => {
 
   return (
     <Link to='/' className={styles.logo}>
-        <img src={logo} alt='logo'/>
+        <img src={logo} alt='logo Header'/>
     </Link>
   )
 }
