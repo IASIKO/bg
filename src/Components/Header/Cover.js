@@ -3,8 +3,11 @@ import styles from './Cover.module.css'
 
 const Cover = () => {
   return (
-    <div className={styles.cover}>
-    </div>
+    <section className={styles.cover}>
+      <div className={styles.backgroundOverlay}>
+
+      </div>
+    </section>
   );
 };
 
