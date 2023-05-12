@@ -16,3 +16,8 @@
   background-color: #101317;
   opacity: 0.6;
 }
+
+.cover img {
+    width: 250px;
+    margin: auto;
+}
