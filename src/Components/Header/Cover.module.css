@@ -19,5 +19,7 @@
 
 .cover img {
     width: 250px;
+    display: block;
     margin: auto;
+    transform: translateY(50%);
 }
