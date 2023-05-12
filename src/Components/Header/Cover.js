@@ -3,7 +3,7 @@ import styles from './Cover.module.css'
 
 const Cover = () => {
   return (
-    <div className={styles.cover} style={{}}>
+    <div className={styles.cover}>
     </div>
   );
 };
