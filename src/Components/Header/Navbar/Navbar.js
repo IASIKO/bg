@@ -11,13 +11,13 @@ const Navbar = () => {
   const [isStyleChange, setIsStyleChange] = useState(styles.pageTitle)
 
   const onStyleChangeHandler = () => {
-    
+      setIsStyleChange(styles.pageTitleChanged)
   }
 
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-          <div className={isStyleChange} >
+          <div className={isStyleChange} onClick={onStyleChangeHandler}>
             <Link to="/">Home</Link>
             <div></div>
           </div>
