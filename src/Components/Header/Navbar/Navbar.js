@@ -17,22 +17,22 @@ const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-          <div className={isStyleChange} onClick={onStyleChangeHandler}>
+          {<div className={isStyleChange} onClick={onStyleChangeHandler}>
             <Link to="/">Home</Link>
             <div></div>
-          </div>
+          </div>}
 
-          <div className={isStyleChange} >
+          <div className={styles.pageTitle} >
             <Link to="/boardgames">Board Games</Link>
             <div></div>
           </div>
 
-          <div className={isStyleChange}>
+          <div className={styles.pageTitle}>
             <Link to="/giftcards">Gift Cards</Link>
             <div></div>
           </div>
 
-          <div className={isStyleChange}>
+          <div className={styles.pageTitle}>
             <Link to="/contact">Contact us</Link>
             <div></div>
           </div>
