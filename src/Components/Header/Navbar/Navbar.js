@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const onStyleChangeHandler = () => {
       setIsStyleChange(styles.pageTitleChanged)
+      console.log('Shecvlilia');
   }
 
   return (
