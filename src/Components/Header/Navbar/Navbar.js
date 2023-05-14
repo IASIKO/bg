@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import UK from "../../../Assets/UK.png";
 import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -7,41 +7,25 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isStyleChange, setIsStyleChange] = useState(styles.pageTitle);
-
-  const onHomeClickHandler = () => {
-    setIsStyleChange(styles.pageTitleChanged);
-  };
-
-  const onBGClickHandler = () => {
-    setIsStyleChange(styles.pageTitleChanged);
-  };
-  const onGiftCardClickHandler = () => {
-    setIsStyleChange(styles.pageTitleChanged);
-  };
-  const onContactClickHandler = () => {
-    setIsStyleChange(styles.pageTitleChanged);
-  };
-
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={isStyleChange} onClick={onHomeClickHandler}>
+        <div className={styles.pageTitle}>
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div className={isStyleChange} onClick={onBGClickHandler}>
+        <div className={styles.pageTitle}>
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div className={isStyleChange} onClick={onGiftCardClickHandler}>
+        <div className={styles.pageTitle}>
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div className={isStyleChange} onClick={onContactClickHandler}>
+        <div className={styles.pageTitle}>
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>
