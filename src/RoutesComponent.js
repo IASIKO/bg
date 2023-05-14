@@ -6,6 +6,7 @@ import ContactPage from "./Components/Pages/ContactPage";
 import { Route, Routes } from "react-router-dom";
 
 const RoutesComponent = () => {
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
