@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isStyleChange, setIsStyleChange] = useState(styles.pageTitle);
-  const [isActive, setIsActive] = useState(false)
 
   const onHomeClickHandler = () => {
     setIsStyleChange(styles.pageTitleChanged);
