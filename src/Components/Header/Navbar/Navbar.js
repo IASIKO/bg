@@ -7,46 +7,49 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false)
+  const [activePage, setActivePage] = useState("");
 
-  const onHomePageClickHandler = () => {
-    setIsActive(true)
-  }
-
-  const onBGPageClickHandler = () => {
-    setIsActive(true)
-  }
-
-  const onGiftCardPageClickHandler = () => {
-    setIsActive(true)
-  }
-
-  const onContactPageClickHandler = () => {
-    setIsActive(true)
-  }
-
-
-  
+  const onPageClickHandler = (page) => {
+    setActivePage(page);
+  };
 
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onHomePageClickHandler}>
+        <div
+          className={activePage === "home" ? styles.active : styles.pageTitle}
+          onClick={() => onPageClickHandler("home")}
+        >
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onBGPageClickHandler}>
+        <div
+          className={
+            activePage === "boardgames" ? styles.active : styles.pageTitle
+          }
+          onClick={() => onPageClickHandler("boardgames")}
+        >
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onGiftCardPageClickHandler}>
+        <div
+          className={
+            activePage === "giftcard" ? styles.active : styles.pageTitle
+          }
+          onClick={() => onPageClickHandler("giftcard")}
+        >
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onContactPageClickHandler}>
+        <div
+          className={
+            activePage === "contact" ? styles.active : styles.pageTitle
+          }
+          onClick={() => onPageClickHandler("contact")}
+        >
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>
