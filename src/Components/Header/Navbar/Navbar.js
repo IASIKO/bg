@@ -7,7 +7,11 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(styles.pageTitle)
+  const [isActive, setIsActive] = useState()
+
+  const onPageClickHandler = () => {
+    setIsActive(styles.active)
+  }
 
 
   
@@ -15,22 +19,22 @@ const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={isActive}>
+        <div className={isActive} onClick={onPageClickHandler}>
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div className={isActive}>
+        <div className={styles.pageTitle}>
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div className={isActive}>
+        <div className={styles.pageTitle}>
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div className={isActive}>
+        <div className={styles.pageTitle}>
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>
