@@ -7,11 +7,12 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState("home");
 
   const onPageClickHandler = (page) => {
     setActivePage(page);
   };
+  
 
   return (
     <div className={styles.navbarWrapper}>
