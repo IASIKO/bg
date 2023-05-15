@@ -24,43 +24,41 @@
 }
 
 .pageTitle:hover a {
-    color: rgb(241, 132, 54);
-  }
+  color: rgb(241, 132, 54);
+}
 
 .pageTitle a img {
   width: 20px;
   transform: translateX(-50%);
 }
 
-
 .pageTitle div {
-    width: 100%;
-    height: 4px;
-  }
-  
-  .pageTitle:hover div{
-    background-color: rgb(241, 132, 54);
-  }
+  width: 100%;
+  height: 4px;
+}
 
-  .pageTitleChanged {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .pageTitleChanged a {
-    text-decoration: none;
-    color: #4a4a4a;
-    font-weight: 650;
-    font-size: 16px;
-    padding: 20px;
-  }
+.pageTitle:hover div {
+  background-color: rgb(241, 132, 54);
+}
 
-  .pageTitleChanged div {
-    width: 100%;
-    height: 4px;
-    background-color: #4a4a4a;
-  }
-  
+.pageTitleChanged {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageTitleChanged a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: 650;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.pageTitleChanged div {
+  width: 100%;
+  height: 4px;
+  background-color: #4a4a4a;
+}
 
 .infoContainer {
   display: flex;
@@ -73,7 +71,7 @@
   font-size: 24px;
 }
 
-.icon :hover{
-    color: rgb(241, 132, 54);
-    cursor: pointer;
+.icon :hover {
+  color: rgb(241, 132, 54);
+  cursor: pointer;
 }

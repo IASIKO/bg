@@ -7,32 +7,50 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [state, setState] = useState()
+  const [activePage, setActivePage] = useState("home");
 
   const onHomeClickHandler = () => {
-    
-  }
-  
+    setActivePage("home");
+  };
+
+  const onPageClickHandler = (page) => {
+    setActivePage(page);
+  };
+
+  const getPageClassName = (page) => {
+    return `${styles.pageTitle} ${
+      activePage === page ? styles.pageTitleChanged : ""
+    }`;
+  };
 
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={styles.pageTitle} onClick={onHomeClickHandler}>
+        <div className={getPageClassName("home")} onClick={onHomeClickHandler}>
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div
+          className={getPageClassName("boardgames")}
+          onClick={() => onPageClickHandler("boardgames")}
+        >
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div
+          className={getPageClassName("giftcards")}
+          onClick={() => onPageClickHandler("giftcards")}
+        >
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div
+          className={getPageClassName("contact")}
+          onClick={() => onPageClickHandler("contact")}
+        >
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>
