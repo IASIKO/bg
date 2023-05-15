@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UK from "../../../Assets/UK.png";
 import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -7,28 +7,30 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isActive, setIsActive] = useState(styles.pageTitle)
+
 
   
 
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={styles.pageTitle}>
+        <div className={isActive}>
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div className={isActive}>
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div className={isActive}>
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div className={isActive}>
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>
