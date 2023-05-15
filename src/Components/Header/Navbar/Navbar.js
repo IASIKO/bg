@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import UK from "../../../Assets/UK.png";
 import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -7,50 +7,28 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("home");
 
-  const onHomeClickHandler = () => {
-    setActivePage("home");
-  };
-
-  const onPageClickHandler = (page) => {
-    setActivePage(page);
-  };
-
-  const getPageClassName = (page) => {
-    return `${styles.pageTitle} ${
-      activePage === page ? styles.pageTitleChanged : ""
-    }`;
-  };
+  
 
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={getPageClassName("home")} onClick={onHomeClickHandler}>
+        <div className={styles.pageTitle}>
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div
-          className={getPageClassName("boardgames")}
-          onClick={() => onPageClickHandler("boardgames")}
-        >
+        <div className={styles.pageTitle}>
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div
-          className={getPageClassName("giftcards")}
-          onClick={() => onPageClickHandler("giftcards")}
-        >
+        <div className={styles.pageTitle}>
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div
-          className={getPageClassName("contact")}
-          onClick={() => onPageClickHandler("contact")}
-        >
+        <div className={styles.pageTitle}>
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>
