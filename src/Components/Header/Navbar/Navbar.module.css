@@ -41,24 +41,7 @@
   background-color: rgb(241, 132, 54);
 }
 
-.pageTitleChanged {
-  display: flex;
-  flex-direction: column;
-}
 
-.pageTitleChanged a {
-  text-decoration: none;
-  color: #4a4a4a;
-  font-weight: 650;
-  font-size: 16px;
-  padding: 20px;
-}
-
-.pageTitleChanged div {
-  width: 100%;
-  height: 4px;
-  background-color: #4a4a4a;
-}
 
 
 
