@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UK from "../../../Assets/UK.png";
 import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -7,10 +7,17 @@ import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [state, setState] = useState()
+
+  const onHomeClickHandler = () => {
+    
+  }
+  
+
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={styles.pageTitle}>
+        <div className={styles.pageTitle} onClick={onHomeClickHandler}>
           <Link to="/">Home</Link>
           <div></div>
         </div>
