@@ -9,7 +9,19 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false)
 
-  const onPageClickHandler = () => {
+  const onHomePageClickHandler = () => {
+    setIsActive(true)
+  }
+
+  const onBGPageClickHandler = () => {
+    setIsActive(true)
+  }
+
+  const onGiftCardPageClickHandler = () => {
+    setIsActive(true)
+  }
+
+  const onContactPageClickHandler = () => {
     setIsActive(true)
   }
 
@@ -19,22 +31,22 @@ const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div className={styles.pageTitle} onClick={onPageClickHandler}>
+        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onHomePageClickHandler}>
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onBGPageClickHandler}>
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onGiftCardPageClickHandler}>
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div className={styles.pageTitle}>
+        <div className={!isActive ? styles.pageTitle : styles.active} onClick={onContactPageClickHandler}>
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>
