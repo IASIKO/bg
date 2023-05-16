@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 
 const RoutesComponent = () => {
 
-  console.log("RoutesComponent");
+  console.log("Routes Component");
 
   return (
     <Routes>
