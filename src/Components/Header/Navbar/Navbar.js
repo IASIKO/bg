@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [activePage, setActivePage] = useState("home");
 
+  console.log("Navbar");
+
   const onPageClickHandler = (page) => {
     setActivePage(page);
   };

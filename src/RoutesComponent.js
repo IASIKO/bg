@@ -7,6 +7,8 @@ import { Route, Routes } from "react-router-dom";
 
 const RoutesComponent = () => {
 
+  console.log("RoutesComponent");
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
