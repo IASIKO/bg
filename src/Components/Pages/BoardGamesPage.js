@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 
 const BoardGamesPage = () => {
 
-  console.log("BoardGames");
+  console.log("Board Games Page");
 
   return (
     <>
