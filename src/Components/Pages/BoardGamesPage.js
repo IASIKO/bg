@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 const BoardGamesPage = () => {
 
   console.log("Board Games Page");
+  
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UK from "../../../Assets/UK.png";
 import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -13,8 +13,12 @@ const Navbar = () => {
 
   const onPageClickHandler = (page) => {
     setActivePage(page);
+    console.log(page);
   };
-  
+
+  // useEffect(() => {
+  //   onPageClickHandler()
+  // },[activePage]);
 
   return (
     <div className={styles.navbarWrapper}>
