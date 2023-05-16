@@ -3,7 +3,7 @@ import Header from '../Header/Header'
 
 const GiftCardPage = () => {
 
-  console.log("GiftCardPage");
+  console.log("Gift Card Page");
 
   return (
     <>
