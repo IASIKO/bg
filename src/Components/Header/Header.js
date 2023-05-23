@@ -7,8 +7,6 @@ import Navbar from "./Navbar/Navbar";
 
 const Header = () => {
 
-  console.log("Header");
-
   return (
     <>
       <div className={styles.wrapper}>
