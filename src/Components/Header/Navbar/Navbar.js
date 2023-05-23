@@ -16,9 +16,9 @@ const Navbar = () => {
     console.log(page);
   };
 
-  useEffect(() => {
-    onPageClickHandler()
-  },[]);
+  // useEffect(() => {
+  //   onPageClickHandler()
+  // },[]);
 
   return (
     <div className={styles.navbarWrapper}>
