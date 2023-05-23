@@ -4,7 +4,6 @@ import Cover from '../Header/Cover'
 
 const Home = () => {
 
-  console.log("Home");
   return (
     <>
       <Header/>
