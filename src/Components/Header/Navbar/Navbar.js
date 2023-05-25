@@ -7,14 +7,11 @@ import { GrInstagram } from "react-icons/gr";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  // const [activePage, setActivePage] = useState("home");
   const navigate = useNavigate()
   const location = useLocation()
 
   const onPageClickHandler = (page) => {
-    // setActivePage(page);
     navigate(page)
-    // console.log(page);
   };
 
   return (
