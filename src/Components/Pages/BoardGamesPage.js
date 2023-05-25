@@ -3,7 +3,6 @@ import Header from "../Header/Header";
 
 const BoardGamesPage = () => {
   
-
   return (
     <>
       <Header/>
