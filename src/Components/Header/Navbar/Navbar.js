@@ -4,22 +4,25 @@ import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("home");
+  // const [activePage, setActivePage] = useState("home");
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const onPageClickHandler = (page) => {
-    setActivePage(page);
-    console.log(page);
+    // setActivePage(page);
+    navigate(page)
+    // console.log(page);
   };
 
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
         <div
-          className={activePage === "home" ? styles.active : styles.pageTitle}
-          onClick={() => onPageClickHandler("home")}
+          className={location.pathname === "/" ? styles.active : styles.pageTitle}
+          onClick={() => onPageClickHandler("/")}
         >
           <Link to="/">Home</Link>
           <div></div>
@@ -27,9 +30,9 @@ const Navbar = () => {
 
         <div
           className={
-            activePage === "boardgames" ? styles.active : styles.pageTitle
+            location.pathname === "/boardgames" ? styles.active : styles.pageTitle
           }
-          onClick={() => onPageClickHandler("boardgames")}
+          onClick={() => onPageClickHandler("/boardgames")}
         >
           <Link to="/boardgames">Board Games</Link>
           <div></div>
@@ -37,9 +40,9 @@ const Navbar = () => {
 
         <div
           className={
-            activePage === "giftcard" ? styles.active : styles.pageTitle
+            location.pathname === "/giftcards" ? styles.active : styles.pageTitle
           }
-          onClick={() => onPageClickHandler("giftcard")}
+          onClick={() => onPageClickHandler("/giftcards")}
         >
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
@@ -47,9 +50,9 @@ const Navbar = () => {
 
         <div
           className={
-            activePage === "contact" ? styles.active : styles.pageTitle
+            location.pathname === "/contact" ? styles.active : styles.pageTitle
           }
-          onClick={() => onPageClickHandler("contact")}
+          onClick={() => onPageClickHandler("/contact")}
         >
           <Link to="/contact">Contact us</Link>
           <div></div>
