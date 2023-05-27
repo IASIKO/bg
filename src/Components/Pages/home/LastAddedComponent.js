@@ -1,4 +1,6 @@
 import React from 'react'
+import styles from './LastAddedComponent.module.css'
+
 
 const LastAddedComponent = () => {
   return (
