@@ -4,31 +4,44 @@ import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
-import { Link} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div>
-          <Link to="/">Home</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+          end
+        >
+          Home
           <div></div>
-        </div>
+        </NavLink>
 
-        <div>
-          <Link to="/boardgames">Board Games</Link>
+        <NavLink
+          to="/boardgames"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Board Games
           <div></div>
-        </div>
+        </NavLink>
 
-        <div>
-          <Link to="/giftcards">Gift Cards</Link>
+        <NavLink
+          to="/giftcards"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Gift Cards
           <div></div>
-        </div>
+        </NavLink>
 
-        <div>
-          <Link to="/contact">Contact us</Link>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Contact us
           <div></div>
-        </div>
+        </NavLink>
 
         <div className={styles.pageTitle}>
           <a href="#">
