@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import UK from "../../../Assets/UK.png";
 import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Navbar = () => {
   return (
