@@ -52,7 +52,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles.pageTitle}>
-          <a href="gurama">
+          <a href="language">
             <img src={UK} alt="UK" />
             ENG
           </a>
