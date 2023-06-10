@@ -4,47 +4,55 @@ import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
-          end
-        >
-          Home
-          <div></div>
-        </NavLink>
-
-        <NavLink
-          to="/boardgames"
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
-        >
-          Board Games
-          <div></div>
-        </NavLink>
-
-        <NavLink
-          to="/giftcards"
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
-        >
-          Gift Cards
-          <div></div>
-        </NavLink>
-
-        <NavLink
-          to="/contact"
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
-        >
-          Contact us
-          <div></div>
-        </NavLink>
+        <div className={styles.pageTitle}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+            end
+          >
+            Home
+            <div></div>
+          </NavLink>
+        </div>
 
         <div className={styles.pageTitle}>
-          <a href="#">
+          <NavLink
+            to="/boardgames"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Board Games
+            <div></div>
+          </NavLink>
+        </div>
+
+        <div className={styles.pageTitle}>
+          <NavLink
+            to="/giftcards"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Gift Cards
+            <div></div>
+          </NavLink>
+        </div>
+
+        <div className={styles.pageTitle}>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Contact us
+            <div></div>
+          </NavLink>
+        </div>
+
+        <div className={styles.pageTitle}>
+          <a href="gurama">
             <img src={UK} alt="UK" />
             ENG
           </a>
