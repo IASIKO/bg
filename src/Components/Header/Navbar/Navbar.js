@@ -7,50 +7,25 @@ import { GrInstagram } from "react-icons/gr";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
-
-  const onPageClickHandler = (page) => {
-    navigate(page)
-  };
-
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div
-          className={location.pathname === "/" ? styles.active : styles.pageTitle}
-          onClick={() => onPageClickHandler("/")}
-        >
+        <div>
           <Link to="/">Home</Link>
           <div></div>
         </div>
 
-        <div
-          className={
-            location.pathname === "/boardgames" ? styles.active : styles.pageTitle
-          }
-          onClick={() => onPageClickHandler("/boardgames")}
-        >
+        <div>
           <Link to="/boardgames">Board Games</Link>
           <div></div>
         </div>
 
-        <div
-          className={
-            location.pathname === "/giftcards" ? styles.active : styles.pageTitle
-          }
-          onClick={() => onPageClickHandler("/giftcards")}
-        >
+        <div>
           <Link to="/giftcards">Gift Cards</Link>
           <div></div>
         </div>
 
-        <div
-          className={
-            location.pathname === "/contact" ? styles.active : styles.pageTitle
-          }
-          onClick={() => onPageClickHandler("/contact")}
-        >
+        <div>
           <Link to="/contact">Contact us</Link>
           <div></div>
         </div>

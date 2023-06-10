@@ -5,7 +5,6 @@ const BoardGamesPage = () => {
   
   return (
     <>
-      <Header/>
       Boardgames
     </>
   );

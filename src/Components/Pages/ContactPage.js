@@ -5,7 +5,6 @@ const ContactPage = () => {
 
   return (
     <>
-      <Header/>
       Contact
     </>
   )

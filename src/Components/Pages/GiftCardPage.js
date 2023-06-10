@@ -5,7 +5,6 @@ const GiftCardPage = () => {
 
   return (
     <>
-      <Header/>
       GiftCard
     </>
   )
