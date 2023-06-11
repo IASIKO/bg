@@ -16,7 +16,7 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? styles.active : undefined)}
           >
             Home
-          <div></div>
+            <div></div>
           </NavLink>
         </div>
 
@@ -26,7 +26,7 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? styles.active : undefined)}
           >
             Board Games
-          <div></div>
+            <div></div>
           </NavLink>
         </div>
 
@@ -36,7 +36,7 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? styles.active : undefined)}
           >
             Gift Cards
-          <div></div>
+            <div></div>
           </NavLink>
         </div>
 
@@ -46,7 +46,7 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? styles.active : undefined)}
           >
             Contact us
-          <div></div>
+            <div></div>
           </NavLink>
         </div>
 
