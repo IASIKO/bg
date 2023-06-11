@@ -4,55 +4,50 @@ import styles from "./Navbar.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { GrInstagram } from "react-icons/gr";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
-
-  const onPageClickHandler = (page) => {
-    navigate(page)
-  };
-
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
-        <div
-          className={location.pathname === "/" ? styles.active : styles.pageTitle}
-          onClick={() => onPageClickHandler("/")}
-        >
-          <Link to="/">Home</Link>
+        <div className={styles.pageTitle}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Home
           <div></div>
+          </NavLink>
         </div>
 
-        <div
-          className={
-            location.pathname === "/boardgames" ? styles.active : styles.pageTitle
-          }
-          onClick={() => onPageClickHandler("/boardgames")}
-        >
-          <Link to="/boardgames">Board Games</Link>
+        <div className={styles.pageTitle}>
+          <NavLink
+            to="/boardgames"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Board Games
           <div></div>
+          </NavLink>
         </div>
 
-        <div
-          className={
-            location.pathname === "/giftcards" ? styles.active : styles.pageTitle
-          }
-          onClick={() => onPageClickHandler("/giftcards")}
-        >
-          <Link to="/giftcards">Gift Cards</Link>
+        <div className={styles.pageTitle}>
+          <NavLink
+            to="/giftcards"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Gift Cards
           <div></div>
+          </NavLink>
         </div>
 
-        <div
-          className={
-            location.pathname === "/contact" ? styles.active : styles.pageTitle
-          }
-          onClick={() => onPageClickHandler("/contact")}
-        >
-          <Link to="/contact">Contact us</Link>
+        <div className={styles.pageTitle}>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Contact us
           <div></div>
+          </NavLink>
         </div>
 
         <div className={styles.pageTitle}>
