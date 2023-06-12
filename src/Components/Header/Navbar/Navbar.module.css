@@ -45,10 +45,6 @@
   background-color: rgb(241, 132, 54);
 }
 
-.active {
-  display: flex;
-  flex-direction: column;
-}
 
 .active {
   text-decoration: none;
