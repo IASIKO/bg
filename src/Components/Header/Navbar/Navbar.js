@@ -7,7 +7,6 @@ import { GrInstagram } from "react-icons/gr";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.pageContainer}>
