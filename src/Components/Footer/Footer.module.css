@@ -1,5 +1,5 @@
 .footer {
-  background-image: url(../../Assets/bgcover.jpg);
+  background-image: url(../../Assets/footerImage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -7,4 +7,12 @@
   overflow: hidden;
   background-attachment: fixed;
   position: relative;
+}
+
+.footerBackgroundOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #101317;
+  opacity: 0.92;
 }
