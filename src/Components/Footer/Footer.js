@@ -4,7 +4,10 @@ import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
-    <section>
+    <section className={styles.footer}>
+        <div >
+
+        </div>
         
     </section>
   )
