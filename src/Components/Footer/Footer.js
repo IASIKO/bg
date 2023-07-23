@@ -9,18 +9,26 @@ const Footer = () => {
     <section className={styles.footer}>
       <div className={styles.footerBackgroundOverlay}></div>
       <div>
-        <i>
-          <MdLocationOn />
-        </i>
-        <span></span>
-        <i>
-          <FaPhone />
-        </i>
-        <span></span>
-        <i>
-          <FaRegEnvelopeOpen />
-        </i>
-        <span></span>
+        <ul>
+          <li>
+            <i>
+              <MdLocationOn />
+            </i>
+            <span>Tbilisi, 99 Tina Iosebidze St</span>
+          </li>
+          <li>
+            <i>
+              <FaPhone />
+            </i>
+            <span>999 99 99 99</span>
+          </li>
+          <li>
+            <i>
+              <FaRegEnvelopeOpen />
+            </i>
+            <span>info.boardgame@gmail.com</span>
+          </li>
+        </ul>
       </div>
     </section>
   );
