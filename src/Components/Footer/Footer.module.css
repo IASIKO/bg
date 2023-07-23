@@ -21,30 +21,30 @@
   display: flex;
 }
 
-.footerInfo {
+.footerList {
   width: 33.3%;
   position: relative;
   padding: 30px;
   transform: translateY(50%);
 }
 
-.footerInfo ul {
+.footerList ul {
   margin: 0;
   padding: 0;
 }
 
-.footerInfo li {
+.footerList li {
   list-style: none;
   padding: 0 0 4px;
 }
 
-.footerInfo i {
+.footerList i {
   position: relative;
   font-size: 15px;
   color: rgb(241, 132, 54);
 }
 
-.footerInfo span {
+.footerList span {
   position: relative;
   color: rgba(255, 255, 255, 0.7);
   padding-left: 16px;
@@ -52,11 +52,11 @@
   font-family: sans-serif;
 }
 
-.footerInfo a {
+.footerList a {
   text-decoration: none;
 }
 
-.footerInfo span:hover {
+.pageSpan:hover {
   color: rgb(241, 132, 54);
 }
 
@@ -72,6 +72,7 @@
 
 .footerC span {
   font-family: sans-serif;
+  margin-bottom: 12px;
 }
 
 .footerC a {
