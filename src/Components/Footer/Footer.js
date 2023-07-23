@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <section className={styles.footer}>
       <div className={styles.footerBackgroundOverlay}></div>
-      <div>
+      <div className={styles.footerInfo}>
         <ul>
           <li>
             <i>

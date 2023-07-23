@@ -17,8 +17,21 @@
   position: absolute;
 }
 
-.footer i {
+.footerInfo {
+    position: relative;
+}
+
+.footerInfo {
+    text-decoration: none;
+}
+
+.footerInfo i {
   position: relative;
   font-size: larger;
   color: rgb(241, 132, 54);
+}
+
+.footerInfo span {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
 }
