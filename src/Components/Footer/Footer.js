@@ -1,19 +1,27 @@
 import React from "react";
 import { MdLocationOn } from "react-icons/md";
-import { FaPhoneFlip } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
+import { FaRegEnvelopeOpen } from "react-icons/fa";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
     <section className={styles.footer}>
       <div className={styles.footerBackgroundOverlay}></div>
-      <span>
-        <MdLocationOn />
-      </span>
-
-      <span>
-        <FaPhoneFlip />
-      </span>
+      <div>
+        <i>
+          <MdLocationOn />
+        </i>
+        <span></span>
+        <i>
+          <FaPhone />
+        </i>
+        <span></span>
+        <i>
+          <FaRegEnvelopeOpen />
+        </i>
+        <span></span>
+      </div>
     </section>
   );
 };
