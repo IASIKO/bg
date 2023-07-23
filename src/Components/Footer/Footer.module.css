@@ -40,7 +40,7 @@
 
 .footerInfo i {
   position: relative;
-  font: 15px;
+  font-size: 15px;
   color: rgb(241, 132, 54);
 }
 
@@ -48,31 +48,15 @@
   position: relative;
   color: rgba(255, 255, 255, 0.7);
   padding-left: 16px;
-  font: 15px;
+  font-size: 15px;
   font-family: sans-serif;
 }
 
-.footerPages {
-  width: 33.3%;
-  position: relative;
-  padding: 30px;
-  transform: translateY(50%);
-  display: flex;
-  flex-direction: column;
-}
-
-.footerPages a {
+.footerInfo a {
   text-decoration: none;
-  padding: 0 0 4px;
 }
 
-.footerPages span {
-  font-family: sans-serif;
-  font: 14px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footerPages span:hover {
+.footerInfo span:hover {
   color: rgb(241, 132, 54);
 }
 
@@ -86,10 +70,15 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.footerC span {
+  font-family: sans-serif;
+}
+
 .footerC a {
   text-decoration: none;
   padding: 0 0 4px;
   color: #898989;
+  font-size: 12px;
   transition: 0.5s;
 }
 

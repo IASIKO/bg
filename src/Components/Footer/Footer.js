@@ -33,19 +33,29 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className={styles.footerPages}>
-          <Link to="/contact">
-            <span>Contact us</span>
-          </Link>
-          <Link>
-            <span>Privacy Policy</span>
-          </Link>
-          <Link>
-            <span>Terms and Conditions</span>
-          </Link>
-          <Link>
-            <span>Terms of delivery</span>
-          </Link>
+        <div className={styles.footerInfo}>
+          <ul>
+            <li>
+              <Link to="/contact">
+                <span>Contact us</span>
+              </Link>
+            </li>
+            <li>
+              <Link>
+                <span>Privacy Policy</span>
+              </Link>
+            </li>
+            <li>
+              <Link>
+                <span>Terms and Conditions</span>
+              </Link>
+            </li>
+            <li>
+              <Link>
+                <span>Terms of delivery</span>
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div className={styles.footerC}>
