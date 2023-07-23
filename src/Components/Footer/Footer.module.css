@@ -18,20 +18,30 @@
 }
 
 .footerInfo {
+  width: 33.3%;
   position: relative;
+  padding: 30px;
+  transform: translateY(50%);
+}
+
+.footerInfo ul {
+  margin: 0;
 }
 
 .footerInfo li {
   list-style: none;
+  padding: 0 0 4px;
 }
 
 .footerInfo i {
   position: relative;
-  font-size: larger;
+  font: 15px;
   color: rgb(241, 132, 54);
 }
 
 .footerInfo span {
   position: relative;
   color: rgba(255, 255, 255, 0.7);
+  padding-left: 16px;
+  font: 15px;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { MdLocationOn } from "react-icons/md";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
 import styles from "./Footer.module.css";
@@ -12,7 +12,7 @@ const Footer = () => {
         <ul>
           <li>
             <i>
-              <MdLocationOn />
+              <FaMapMarkerAlt />
             </i>
             <span>Tbilisi, 99 Tina Iosebidze St</span>
           </li>
