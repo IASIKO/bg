@@ -1,21 +1,19 @@
-import React from 'react'
-import Cover from '../Header/Cover'
-import Body from '../../UI/Body'
-import LastAddedComponent from '../Pages/home/LastAddedComponent'
-import Categories from '../Pages/home/Categories'
-
+import React from "react";
+import Cover from "../Header/Cover";
+import Body from "../../UI/Body";
+import Categories from "../Pages/home/Categories";
+import BGsList from "./home/BGsList";
 
 const Home = () => {
-
   return (
     <>
-      <Cover/>
+      <Cover />
       <Body>
-        <LastAddedComponent/>
-        <Categories/>
+        <BGsList />
+        <Categories />
       </Body>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
