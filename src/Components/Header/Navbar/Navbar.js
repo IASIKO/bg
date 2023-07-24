@@ -62,10 +62,10 @@ const Navbar = () => {
 
       <div className={styles.infoContainer}>
         <span>
-          <FaPhoneAlt /> 999 999 999
+          <FaPhoneAlt className={styles.icon} /> 999 999 999
         </span>
         <span className={styles.icon}>
-          <BsFacebook />
+          <BsFacebook className={styles.icon} />
         </span>
         <span>
           <GrInstagram className={styles.icon} />
