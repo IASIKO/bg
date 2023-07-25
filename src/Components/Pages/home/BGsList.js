@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./BGsList.module.css";
 import BG from "./BG";
 
@@ -36,11 +36,37 @@ const DUMMY_BGs = [
 ];
 
 const BGsList = () => {
+  const [items, setItems] = useState([]);
+
+  const fetchData = async () => {
+    const response = await fetch("http://localhost:3001/products");
+
+    const data = await response.json();
+
+    const newArray = await data.products.map(item => {
+      return (
+        <div key={item._id}>
+          <h1>{item.name}</h1>
+          <img src={item.image} alt={item.title}/>
+          <p>{item.category}</p>
+          <p>{item.description}</p>
+        </div>
+      )
+    })
+
+    setItems(newArray);
+  };
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <h1 className={styles.lastAddedTitle}>Last added</h1>
+      {items}
       <ul className={styles.bgs}>
-        <BG bgData={DUMMY_BGs} />
+        <BG bgData={DUMMY_BGs}/>
       </ul>
     </>
   );
