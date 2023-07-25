@@ -10,13 +10,19 @@ const DUMMY_BGs = [
     price: "400.00 ₾",
   },
   {
-    id: "1",
+    id: "2",
     img: "https://corners.ge/wp-content/uploads/2023/06/Rebellion-Unplugged-Sniper-Elite-The-Board-Game-247x247.jpg",
     title: "Sniper Elite",
     price: "400.00 ₾",
   },
   {
-    id: "1",
+    id: "3",
+    img: "https://corners.ge/wp-content/uploads/2023/06/Rebellion-Unplugged-Sniper-Elite-The-Board-Game-247x247.jpg",
+    title: "Sniper Elite",
+    price: "400.00 ₾",
+  },
+  {
+    id: "4",
     img: "https://corners.ge/wp-content/uploads/2023/06/Rebellion-Unplugged-Sniper-Elite-The-Board-Game-247x247.jpg",
     title: "Sniper Elite",
     price: "400.00 ₾",

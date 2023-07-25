@@ -6,7 +6,7 @@ const BG = (props) => {
   return (
     <>
       {props.bgData.map((item) => (
-        <li className={styles.bg}>
+        <li className={styles.bg} key={item.id}>
           <div className={styles.imgDiv}>
             <Link>
               <img src={item.img} alt={item.title} />
@@ -14,9 +14,9 @@ const BG = (props) => {
           </div>
           <div>
             <Link>
-              <h2>{item.title}</h2>
+              <h2 className={styles.title}>{item.title}</h2>
             </Link>
-            <span>{item.price}</span>
+            <span className={styles.price}>{item.price}</span>
           </div>
         </li>
       ))}
