@@ -4,7 +4,7 @@ import BoardGamesPage from "./Components/Pages/BoardGamesPage";
 import GiftCardPage from "./Components/Pages/GiftCardPage";
 import ContactPage from "./Components/Pages/ContactPage";
 import RootLayout from "./Components/Pages/RootLayout";
-import RegisterForm from "./Components/Pages/RegisterForm";
+import Register from "./Components/Pages/Register";
 import Login from "./Components/Pages/Login";
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
         { path: "/boardgames", element: <BoardGamesPage /> },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
-        { path: "/register", element: <RegisterForm /> },
+        { path: "/register", element: <Register/> },
         { path: "/login", element: <Login /> },
       ],
     },

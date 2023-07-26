@@ -1,17 +1,33 @@
-import React from 'react'
-import styles from './EcommerceNavbar.module.css'
-import Wishlist from './Wishlist'
-import Login from './Login'
-import Cart from './Cart'
+import React from "react";
+import styles from "./EcommerceNavbar.module.css";
+import { ImCart } from "react-icons/im";
+import { RxPerson } from "react-icons/rx";
+import { FaRegHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const EcommerceNavbar = () => {
   return (
     <div className={styles.eContainer}>
-        <Wishlist/>
-        <Login/>
-        <Cart/>
+      <div>
+        <i>
+          <FaRegHeart />
+        </i>
+      </div>
+      <div>
+        <Link to="/login">
+          <i>
+            <RxPerson />
+          </i>
+        </Link>
+      </div>
+      <div className={styles.icon}>
+        <i>
+          <ImCart />
+          <span>0</span>
+        </i>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default EcommerceNavbar
+export default EcommerceNavbar;
