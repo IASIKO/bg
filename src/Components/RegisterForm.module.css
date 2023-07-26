@@ -25,6 +25,7 @@
 
 .actions button {
   font: inherit;
+  font-weight: bold;
   cursor: pointer;
   padding: 0.5rem 1.5rem;
   border-radius: 30px;
@@ -36,12 +37,10 @@
 .actions a {
   text-decoration: none;
   background-color: transparent;
-  color: var(--color-gray-300);
 }
 
 .actions button:hover {
-  background-color: white;
-  color: #000000;
+  background-color: rgb(241,132,54);
 }
 
 .actions a:hover {
