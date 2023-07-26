@@ -4,6 +4,7 @@ import BoardGamesPage from "./Components/Pages/BoardGamesPage";
 import GiftCardPage from "./Components/Pages/GiftCardPage";
 import ContactPage from "./Components/Pages/ContactPage";
 import RootLayout from "./Components/Pages/RootLayout";
+import RegisterForm from "./Components/Pages/RegisterForm";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -15,6 +16,7 @@ const App = () => {
         { path: "/boardgames", element: <BoardGamesPage /> },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
+        { path: "/register", element: <RegisterForm /> },
       ],
     },
   ]);
