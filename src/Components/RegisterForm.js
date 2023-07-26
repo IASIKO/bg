@@ -37,6 +37,7 @@ const RegisterForm = (props) => {
 
   const registerFormSubmitHandler = (event) => {
     event.preventDefault();
+    props.onAddUser(userData)
   };
 
   return (

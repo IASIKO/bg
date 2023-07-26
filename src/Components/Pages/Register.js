@@ -1,12 +1,28 @@
-import React from 'react'
-import RegisterForm from '../RegisterForm'
+import React, { useEffect, useState } from "react";
+import RegisterForm from "../RegisterForm";
 
 const Register = () => {
+  const [userData, setUserData] = useState([]);
+
+  const addUser = (userData) => {
+    fetch("http://localhost:3001/users", {
+      method: "POST",
+      body: JSON.stringify(userData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
+  useEffect(() => {
+    addUser();
+  }, []);
+
   return (
     <>
-      <RegisterForm/>
+      <RegisterForm onAddUser={addUser} />
     </>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
