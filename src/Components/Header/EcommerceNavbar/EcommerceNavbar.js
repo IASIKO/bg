@@ -20,7 +20,7 @@ const EcommerceNavbar = () => {
           </i>
         </Link>
       </div>
-      <div className={styles.icon}>
+      <div className={styles.cartIcon}>
         <i>
           <ImCart />
           <span>0</span>
