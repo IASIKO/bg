@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import RegisterForm from "../RegisterForm";
 
 const Register = () => {
-  const [userData, setUserData] = useState([]);
+  // const [userData, setUserData] = useState([]);
+
 
   const addUser = (userData) => {
     fetch("http://localhost:3001/users", {
