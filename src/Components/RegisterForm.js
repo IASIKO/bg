@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "./RegisterForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = (props) => {
   const [enteredFirstName, setEnteredFirstName] = useState();
@@ -12,33 +13,37 @@ const RegisterForm = (props) => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
+  const navigate = useNavigate()
+
   const firstNameInputChangeHandler = () => {
     setEnteredFirstName(firstNameRef.current.value);
   };
 
   const lastNameInputChangeHandler = () => {
-    setEnteredLastName(firstNameRef.current.value);
+    setEnteredLastName(lastNameRef.current.value);
   };
 
   const emailInputChangeHandler = () => {
-    setEnteredEmail(firstNameRef.current.value);
+    setEnteredEmail(emailRef.current.value);
   };
 
   const passwordInputChangeHandler = () => {
-    setEnteredPassword(firstNameRef.current.value);
-  };
-
-  const userData = {
-    firstName: enteredFirstName,
-    lastName: enteredLastName,
-    email: enteredEmail,
-    password: enteredPassword,
+    setEnteredPassword(passwordRef.current.value);
   };
 
   const registerFormSubmitHandler = (event) => {
     event.preventDefault();
-    props.onAddUser(userData)
+
+    const userData = {
+      firstName: enteredFirstName,
+      lastName: enteredLastName,
+      email: enteredEmail,
+      password: enteredPassword,
+    };
+    props.onAddUser(userData);
+    navigate('/')
   };
+
 
   return (
     <>
