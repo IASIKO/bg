@@ -14,7 +14,7 @@ const EcommerceNavbar = () => {
         </i>
       </div>
       <div>
-        <Link to="/register">
+        <Link to="/login">
           <i>
             <RxPerson />
           </i>
