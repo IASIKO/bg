@@ -16,9 +16,7 @@ const LoginForm = () => {
           <input id="password" type="password" name="password" required />
         </p>
         <div className={styles.actions}>
-          <Link to="/register">
-            <p>Don't have an account? Sign Up here.</p>
-          </Link>
+          <Link to="/register">Don't have an account? Sign Up here.</Link>
           <button>Login</button>
         </div>
       </form>

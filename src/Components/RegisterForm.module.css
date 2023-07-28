@@ -37,6 +37,7 @@
 .actions a {
   text-decoration: none;
   background-color: transparent;
+  color: #000000;
 }
 
 .actions button:hover {
@@ -44,5 +45,5 @@
 }
 
 .actions a:hover {
-  background-color: var(--color-gray-800);
+  color: rgb(241, 132, 54);
 }

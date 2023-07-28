@@ -93,9 +93,7 @@ const RegisterForm = (props) => {
           />
         </p>
         <div className={styles.actions}>
-          <Link to="/login">
-            <p>Already have an account? Login here.</p>
-          </Link>
+          <Link to="/login">Already have an account? Login here.</Link>
           <button>Register</button>
         </div>
       </form>

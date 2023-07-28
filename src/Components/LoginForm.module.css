@@ -37,12 +37,13 @@
 .actions a {
   text-decoration: none;
   background-color: transparent;
+  color: #000000;
 }
 
 .actions button:hover {
   background-color: rgb(241, 132, 54);
 }
 
-/* .actions a:hover {
-  background-color: var(--color-gray-800);
-} */
+.actions a:hover {
+  color: rgb(241, 132, 54);
+}
