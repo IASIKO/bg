@@ -17,7 +17,7 @@ const App = () => {
         { path: "/boardgames", element: <BoardGamesPage /> },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
-        { path: "/register", element: <Register/> },
+        { path: "/register", element: <Register /> },
         { path: "/login", element: <Login /> },
       ],
     },
