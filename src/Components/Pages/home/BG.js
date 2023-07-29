@@ -6,17 +6,19 @@ const BG = (props) => {
   return (
     <>
       {props.bgData.map((item) => (
-        <Link key={item.id}>
-          <li className={styles.bg}>
-            <div className={styles.imgDiv}>
+        <li className={styles.bg} key={item.id}>
+          <div className={styles.imgDiv}>
+            <Link to={item.id}>
               <img src={item.img} alt={item.title} />
-            </div>
-            <div>
+            </Link>
+          </div>
+          <div>
+            <Link to={item.id}>
               <h2 className={styles.title}>{item.title}</h2>
-              <span className={styles.price}>{item.price}</span>
-            </div>
-          </li>
-        </Link>
+            </Link>
+            <span className={styles.price}>{item.price}</span>
+          </div>
+        </li>
       ))}
     </>
   );
