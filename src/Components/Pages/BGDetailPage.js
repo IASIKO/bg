@@ -1,9 +1,9 @@
 import React from 'react'
 
-const BGDetailsPage = () => {
+const BGDetailPage = () => {
   return (
     <div>BGDetailsPage</div>
   )
 }
 
-export default BGDetailsPage
+export default BGDetailPage
