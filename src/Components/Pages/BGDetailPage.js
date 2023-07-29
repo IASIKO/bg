@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
 
 const BGDetailPage = () => {
-  return (
-    <div>BGDetailsPage</div>
-  )
-}
+  const params = useParams();
 
-export default BGDetailPage
+  return <div>{params.bgId}</div>;
+};
+
+export default BGDetailPage;
