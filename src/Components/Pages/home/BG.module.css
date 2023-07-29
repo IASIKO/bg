@@ -13,11 +13,11 @@
   flex-direction: column;
 }
 
-.bg a {
+.bg {
   text-decoration: none;
 }
 
-.bg a img {
+.bg img {
   width: 100%;
   height: auto;
   display: block;
@@ -37,4 +37,6 @@
   font-family: Sans-serif;
   font-size: 16px;
   font-weight: 600;
+  text-decoration: none;
+  text-underline-position: none;
 }
