@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useForm = ({ defaultFormValues }) => {
+const useForm = ({ defaultFormValues }) => {
   const [formValues, setFormValues] = useState(defaultFormValues);
   const onInputChange = (event) => {
     const eventName = event.target.name;
@@ -36,3 +36,5 @@ export const useForm = ({ defaultFormValues }) => {
     checkButtonDisable,
   };
 };
+
+export default useForm;
