@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RegisterForm from "../RegisterForm";
+import RegisterForm from "../Register/RegisterForm";
 
 const Register = () => {
   const [usersData, setUsersData] = useState([]);
