@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import InputForm from "../../UI/InputForm";
 import useForm from "../../application/hooks/useForm";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../redux/slices/userSlice";
+import { authanticateUser } from "../../redux/slices/userSlice";
 
 const generateRegisterFormValues = () => {
   return {
@@ -55,7 +55,7 @@ const RegisterForm = (props) => {
     const email = formValues.email.value;
     const password = formValues.password.value;
 
-    dispatch(registerUser(firstName, lastName, email, password));
+    dispatch(authanticateUser({firstName, lastName, email, password}));
 
     navigate("/");
   };

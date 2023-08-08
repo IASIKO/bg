@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { instance } from "../../application/instance";
 
-export const registerUser = createAsyncThunk(
-  "user/registerUser",
-  async (formValues) => {
+export const authanticateUser = createAsyncThunk(
+  "user/authanticateUser",
+  async (formValues, isLogin) => {
+    const route = `/users/${isLogin ? "login" : "register"}`;
     try {
-      const { data } = await instance.post("/users/register", formValues);
+      const { data } = await instance.post(route, formValues);
       localStorage.setItem("token", data.token);
       localStorage.setItem("refresh_token", data.refreshToken);
       return data;
@@ -25,14 +26,14 @@ const userSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(registerUser.pending, (state) => {
+    builder.addCase(authanticateUser.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(registerUser.fulfilled, (state, action) => {
+    builder.addCase(authanticateUser.fulfilled, (state, action) => {
       state.loading = false;
       state.userData = action.payload.user;
     });
-    builder.addCase(registerUser.rejected, (state, action) => {
+    builder.addCase(authanticateUser.rejected, (state, action) => {
       state.loading = false;
       state.error = "Something went wrong!";
     });
