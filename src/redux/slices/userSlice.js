@@ -3,12 +3,12 @@ import { instance } from "../../application/instance";
 
 export const authanticateUser = createAsyncThunk(
   "user/authanticateUser",
-  async (formValues, isLogin) => {
-    const route = `/users/${isLogin ? "login" : "register"}`;
+  async (values) => {
+    const route = `/users/${values.isLogin ? "login" : "register"}`;
     try {
-      const { data } = await instance.post(route, formValues);
+      const { data } = await instance.post(route, values.formValues);
       localStorage.setItem("token", data.token);
-      localStorage.setItem("refresh_token", data.refreshToken);
+      localStorage.setItem("refresh_token", data.refreshToken); 
       return data;
     } catch (error) {
       console.log("error", error);

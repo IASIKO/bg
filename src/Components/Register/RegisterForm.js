@@ -55,7 +55,12 @@ const RegisterForm = (props) => {
     const email = formValues.email.value;
     const password = formValues.password.value;
 
-    dispatch(authanticateUser({firstName, lastName, email, password}));
+    dispatch(
+      authanticateUser({
+        formValues: { firstName, lastName, email, password },
+        isLogin: false,
+      })
+    );
 
     navigate("/");
   };

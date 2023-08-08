@@ -41,7 +41,9 @@ const LoginForm = () => {
     const email = loginFormValues.email.value;
     const password = loginFormValues.password.value;
 
-    dispatch(authanticateUser({ email, password }));
+    dispatch(
+      authanticateUser({ formValues: { email, password }, isLogin: true })
+    );
     navigate("/");
   };
   return (
