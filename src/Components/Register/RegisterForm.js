@@ -1,54 +1,60 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import styles from "./RegisterForm.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import InputForm from "../../UI/InputForm";
 
 const RegisterForm = (props) => {
-  const [enteredFirstName, setEnteredFirstName] = useState();
-  const [enteredLastName, setEnteredLastName] = useState();
-  const [enteredEmail, setEnteredEmail] = useState();
-  const [enteredPassword, setEnteredPassword] = useState();
+  // const [enteredFirstName, setEnteredFirstName] = useState();
+  // const [enteredLastName, setEnteredLastName] = useState();
+  // const [enteredEmail, setEnteredEmail] = useState();
+  // const [enteredPassword, setEnteredPassword] = useState();
 
-  const firstNameRef = useRef("");
-  const lastNameRef = useRef("");
-  const emailRef = useRef("");
-  const passwordRef = useRef("");
+  // const firstNameRef = useRef("");
+  // const lastNameRef = useRef("");
+  // const emailRef = useRef("");
+  // const passwordRef = useRef("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const firstNameInputChangeHandler = () => {
-    setEnteredFirstName(firstNameRef.current.value);
-  };
+  // const firstNameInputChangeHandler = () => {
+  //   setEnteredFirstName(firstNameRef.current.value);
+  // };
 
-  const lastNameInputChangeHandler = () => {
-    setEnteredLastName(lastNameRef.current.value);
-  };
+  // const lastNameInputChangeHandler = () => {
+  //   setEnteredLastName(lastNameRef.current.value);
+  // };
 
-  const emailInputChangeHandler = () => {
-    setEnteredEmail(emailRef.current.value);
-  };
+  // const emailInputChangeHandler = () => {
+  //   setEnteredEmail(emailRef.current.value);
+  // };
 
-  const passwordInputChangeHandler = () => {
-    setEnteredPassword(passwordRef.current.value);
-  };
+  // const passwordInputChangeHandler = () => {
+  //   setEnteredPassword(passwordRef.current.value);
+  // };
 
-  const registerFormSubmitHandler = (event) => {
-    event.preventDefault();
+  // const registerFormSubmitHandler = (event) => {
+  //   event.preventDefault();
 
-    const userData = {
-      firstName: enteredFirstName,
-      lastName: enteredLastName,
-      email: enteredEmail,
-      password: enteredPassword,
-    };
-    props.onAddUser(userData);
-    navigate("/");
-  };
+  //   const userData = {
+  //     firstName: enteredFirstName,
+  //     lastName: enteredLastName,
+  //     email: enteredEmail,
+  //     password: enteredPassword,
+  //   };
+  //   props.onAddUser(userData);
+  //   navigate("/");
+  // };
 
   return (
     <>
-      <form className={styles.form} onSubmit={registerFormSubmitHandler}>
+      <form className={styles.form}>
         <h1>Create a new user</h1>
-        <p>
+
+        <InputForm />
+        <InputForm />
+        <InputForm />
+        <InputForm />
+        {/* <p>
           <label htmlFor="firstName">First Name</label>
           <input
             id="firstName"
@@ -91,7 +97,7 @@ const RegisterForm = (props) => {
             onChange={passwordInputChangeHandler}
             required
           />
-        </p>
+        </p> */}
         <div className={styles.actions}>
           <Link to="/login">Already have an account? Login here.</Link>
           <button>Register</button>
