@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./InputForm.module.css";
 
-const InputForm = ({name, label, value, onChange, error}) => {
+const InputForm = ({ name, label, value, onChange, error, helpertext }) => {
   return (
     <p className={styles.form}>
-      <label htmlFor={name}>{name}</label>
+      <label htmlFor={name}>{label}</label>
       <input
         id={name}
         type={name}
@@ -12,8 +12,8 @@ const InputForm = ({name, label, value, onChange, error}) => {
         label={label}
         value={value}
         onChange={onChange}
-        // error={!error}
-        helpertext={error}
+        error={error}
+        helpertext={helpertext}
         required
       />
     </p>
