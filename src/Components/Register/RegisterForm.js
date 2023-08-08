@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./RegisterForm.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputForm from "../../UI/InputForm";
 import useForm from "../../application/hooks/useForm";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../redux/slices/userSlice";
 
 const generateRegisterFormValues = () => {
   return {
@@ -42,45 +44,21 @@ const generateRegisterFormValues = () => {
 };
 
 const RegisterForm = (props) => {
-  // const [enteredFirstName, setEnteredFirstName] = useState();
-  // const [enteredLastName, setEnteredLastName] = useState();
-  // const [enteredEmail, setEnteredEmail] = useState();
-  // const [enteredPassword, setEnteredPassword] = useState();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // const firstNameRef = useRef("");
-  // const lastNameRef = useRef("");
-  // const emailRef = useRef("");
-  // const passwordRef = useRef("");
+  const registerFormSubmitHandler = (event) => {
+    event.preventDefault();
 
-  // const navigate = useNavigate();
+    const firstName = formValues.firstName.value;
+    const lastName = formValues.lastName.value;
+    const email = formValues.email.value;
+    const password = formValues.password.value;
 
-  // const firstNameInputChangeHandler = () => {
-  //   setEnteredFirstName(firstNameRef.current.value);
-  // };
+    dispatch(registerUser(firstName, lastName, email, password));
 
-  // const lastNameInputChangeHandler = () => {
-  //   setEnteredLastName(lastNameRef.current.value);
-  // };
-
-  // const emailInputChangeHandler = () => {
-  //   setEnteredEmail(emailRef.current.value);
-  // };
-
-  // const passwordInputChangeHandler = () => {
-  //   setEnteredPassword(passwordRef.current.value);
-  // };
-
-  // const registerFormSubmitHandler = (event) => {
-  //   event.preventDefault();
-  //   const userData = {
-  //     firstName: enteredFirstName,
-  //     lastName: enteredLastName,
-  //     email: enteredEmail,
-  //     password: enteredPassword,
-  //   };
-  //   props.onAddUser(userData);
-  //   navigate("/");
-  // };
+    navigate("/");
+  };
 
   const { formValues, onInputChange } = useForm({
     defaultFormValues: generateRegisterFormValues(),
@@ -88,15 +66,14 @@ const RegisterForm = (props) => {
 
   return (
     <>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={registerFormSubmitHandler}>
         <h1>Create a new user</h1>
-
         <InputForm
           name="firstName"
           label="FirstName"
           value={formValues.firstName.value}
           onChange={onInputChange}
-          error={!!formValues.firstName.error}
+          error={formValues.firstName.error}
           helpertext={formValues.firstName.error}
         />
         <InputForm
@@ -104,7 +81,7 @@ const RegisterForm = (props) => {
           label="LastName"
           value={formValues.lastName.value}
           onChange={onInputChange}
-          error={!!formValues.lastName.error}
+          error={formValues.lastName.error}
           helpertext={formValues.lastName.error}
         />
         <InputForm
@@ -112,7 +89,7 @@ const RegisterForm = (props) => {
           label="Email"
           value={formValues.email.value}
           onChange={onInputChange}
-          error={!!formValues.email.error}
+          error={formValues.email.error}
           helpertext={formValues.email.error}
         />
         <InputForm
@@ -120,7 +97,7 @@ const RegisterForm = (props) => {
           label="Password"
           value={formValues.password.value}
           onChange={onInputChange}
-          error={!!formValues.password.error}
+          error={formValues.password.error}
           helpertext={formValues.password.error}
         />
         {/* <p>
