@@ -9,6 +9,7 @@ export const authanticateUser = createAsyncThunk(
       const { data } = await instance.post(route, values.formValues);
       localStorage.setItem("token", data.token);
       localStorage.setItem("refresh_token", data.refreshToken); 
+      // console.log(data);
       return data;
     } catch (error) {
       console.log("error", error);
