@@ -21,8 +21,16 @@ const App = () => {
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },
-        { path: "/login", element: <Login /> },
-        { path: "/my-account", element: <MyAccount /> },
+        { path: "/login", element: <Login/> },
+        {
+          path: "/my-account",
+          element: <MyAccount />,
+          children: [
+            { path: "/my-account/orders", element: "" },
+            { path: "/my-account/addresses", element: "" },
+            { path: "/my-account/acount details", element: "" },
+          ],
+        },
       ],
     },
   ]);
