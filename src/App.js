@@ -7,7 +7,11 @@ import RootLayout from "./Components/Pages/RootLayout";
 import Register from "./Components/Pages/Register";
 import Login from "./Components/Pages/Login";
 import BGDetailPage from "./Components/Pages/BGDetailPage";
-import MyAccount from "./Components/Pages/MyAccount";
+import MyAccountLayout from "./Components/Pages/MyAccountLayout";
+import Dashboard from "./Components/Pages/My-account/Dashboard";
+import Orders from "./Components/Pages/My-account/Orders";
+import Addresses from "./Components/Pages/My-account/Addresses";
+import AccountDetails from "./Components/Pages/My-account/AccountDetails";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,14 +25,18 @@ const App = () => {
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },
-        { path: "/login", element: <Login/> },
+        { path: "/login", element: <Login /> },
         {
           path: "/my-account",
-          element: <MyAccount />,
+          element: <MyAccountLayout />,
           children: [
-            { path: "/my-account/orders", element: "" },
-            { path: "/my-account/addresses", element: "" },
-            { path: "/my-account/acount details", element: "" },
+            { path: "/my-account", element: <Dashboard /> },
+            { path: "/my-account/orders", element: <Orders /> },
+            { path: "/my-account/addresses", element: <Addresses /> },
+            {
+              path: "/my-account/account-details",
+              element: <AccountDetails />,
+            },
           ],
         },
       ],

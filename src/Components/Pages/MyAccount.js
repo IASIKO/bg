@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../redux/slices/userSlice";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import LoginForm from "./Login/LoginForm";
 
 const MyAccount = () => {
@@ -17,9 +17,15 @@ const MyAccount = () => {
   return (
     <>
       {userInfo ? (
-        <div>
-          <p>Hello {userInfo.firstName}</p>
-          <button onClick={logoutHandler}>Logout</button>
+        <div >
+          <h1>My account</h1>
+          <NavLink to="/my-account">Dashboard</NavLink>
+          <NavLink to="/my-account/orders">Orders</NavLink>
+          <NavLink to="/my-account/addresses">Addresses</NavLink>
+          <NavLink to="/my-account/account-details">Acount details</NavLink>
+          <NavLink to="/login">
+            <button onClick={logoutHandler}>Logout</button>
+          </NavLink>
         </div>
       ) : (
         <LoginForm />
