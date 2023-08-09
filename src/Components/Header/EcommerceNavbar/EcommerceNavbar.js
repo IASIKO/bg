@@ -9,8 +9,6 @@ import { useSelector } from "react-redux";
 const EcommerceNavbar = () => {
   const userInfo = useSelector((state) => state.user.user.userData);
 
-  console.log(userInfo);
-
   return (
     <div className={styles.eContainer}>
       <div>
@@ -27,7 +25,11 @@ const EcommerceNavbar = () => {
           </Link>
         </div>
       ) : (
-        <div>{userInfo.firstName}</div>
+        <Link to="/my-account">
+          <i>
+            <RxPerson />
+          </i>
+        </Link>
       )}
       <div className={styles.cartIcon}>
         <i>

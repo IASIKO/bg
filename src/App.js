@@ -7,6 +7,7 @@ import RootLayout from "./Components/Pages/RootLayout";
 import Register from "./Components/Pages/Register";
 import Login from "./Components/Pages/Login";
 import BGDetailPage from "./Components/Pages/BGDetailPage";
+import MyAccount from "./Components/Pages/MyAccount";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const App = () => {
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },
         { path: "/login", element: <Login /> },
+        { path: "/my-account", element: <MyAccount /> },
       ],
     },
   ]);

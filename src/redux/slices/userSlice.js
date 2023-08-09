@@ -8,7 +8,7 @@ export const authanticateUser = createAsyncThunk(
     try {
       const { data } = await instance.post(route, values.formValues);
       localStorage.setItem("token", data.token);
-      localStorage.setItem("refresh_token", data.refreshToken); 
+      localStorage.setItem("refresh_token", data.refreshToken);
       // console.log(data);
       return data;
     } catch (error) {
@@ -26,6 +26,14 @@ const userSlice = createSlice({
     error: null,
   },
 
+  reducers: {
+    logoutUser: (state) => {
+      state.userData = null;
+      localStorage.removeItem("token");
+      localStorage.removeItem("refresh_token");
+    },
+  },
+
   extraReducers: (builder) => {
     builder.addCase(authanticateUser.pending, (state) => {
       state.loading = true;
@@ -40,5 +48,7 @@ const userSlice = createSlice({
     });
   },
 });
+
+export const { logoutUser } = userSlice.actions;
 
 export const userReducer = userSlice.reducer;

@@ -44,7 +44,7 @@ const LoginForm = () => {
     dispatch(
       authanticateUser({ formValues: { email, password }, isLogin: true })
     );
-    navigate("/");
+    navigate("/my-account");
   };
   return (
     <>

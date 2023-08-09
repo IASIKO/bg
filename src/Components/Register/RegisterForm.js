@@ -62,7 +62,7 @@ const RegisterForm = (props) => {
       })
     );
 
-    navigate("/");
+    navigate("/my-account");
   };
 
   const { formValues, onInputChange } = useForm({
