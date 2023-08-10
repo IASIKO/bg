@@ -1,5 +1,5 @@
 import React from "react";
-import MyAccount from "./MyAccount";
+import MyAccount from "./My-account/MyAccount";
 import { Outlet } from "react-router-dom";
 
 const MyAccountLayout = () => {
