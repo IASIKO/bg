@@ -4,9 +4,18 @@ import { useSelector } from "react-redux";
 const Dashboard = () => {
   const userInfo = useSelector((state) => state.user.user.userData);
 
+  const userFirstName =
+    userInfo?.firstName.charAt(0).toUpperCase() + userInfo?.firstName.slice(1);
+
   return (
     <div>
-      <p>Hello {userInfo?.firstName}</p>
+      Hello
+      <strong> {userFirstName}</strong>
+      <p>
+        From your account dashboard you can view your recent orders, manage your
+        shipping and billing addresses, and edit your password and account
+        details.
+      </p>
     </div>
   );
 };
