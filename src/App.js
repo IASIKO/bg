@@ -12,6 +12,7 @@ import Dashboard from "./Components/Pages/My-account/Dashboard";
 import Orders from "./Components/Pages/My-account/Orders";
 import Addresses from "./Components/Pages/My-account/Addresses";
 import AccountDetails from "./Components/Pages/My-account/AccountDetails";
+import BGnew from "./Components/Pages/BoardGamesPage/BGnew";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -22,6 +23,7 @@ const App = () => {
         { path: "/", element: <Home /> },
         { path: "/:bgId", element: <BGDetailPage /> },
         { path: "/boardgames", element: <BoardGamesPage /> },
+        { path: "/boardgames/new", element: <BGnew /> },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },

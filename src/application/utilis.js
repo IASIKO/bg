@@ -13,3 +13,7 @@ export const getUserInitials = (firstName) => {
   const userName = `${firstName.charAt(0)}`;
   return userName.toUpperCase();
 };
+
+export const isUserAdmin = (userData) => {
+  return userData?.role?.includes("admin"); 
+};

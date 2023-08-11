@@ -1,5 +1,5 @@
 import axios from "axios";
-import { checkTokenValidity } from "./hooks/utilis";
+import { checkTokenValidity } from "./utilis";
 
 export const instance = axios.create({
   baseURL: "http://localhost:3001/",
