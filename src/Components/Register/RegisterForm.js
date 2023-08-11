@@ -105,50 +105,6 @@ const RegisterForm = (props) => {
           error={formValues.password.error}
           helpertext={formValues.password.error}
         />
-        {/* <p>
-          <label htmlFor="firstName">First Name</label>
-          <input
-            id="firstName"
-            type="firstName"
-            name="firstName"
-            ref={firstNameRef}
-            onChange={firstNameInputChangeHandler}
-            required
-          />
-        </p>
-        <p>
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            id="lastName"
-            type="lastName"
-            name="lastName"
-            ref={lastNameRef}
-            onChange={lastNameInputChangeHandler}
-            required
-          />
-        </p>
-        <p>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            ref={emailRef}
-            onChange={emailInputChangeHandler}
-            required
-          />
-        </p>
-        <p>
-          <label htmlFor="image">Password</label>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            ref={passwordRef}
-            onChange={passwordInputChangeHandler}
-            required
-          />
-        </p> */}
         <div className={styles.actions}>
           <Link to="/login">Already have an account? Login here.</Link>
           <button>Register</button>
