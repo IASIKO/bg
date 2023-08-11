@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import useForm from "../../../application/hooks/useForm";
 import styles from "./BGForm.module.css";
 import InputForm from "../../../UI/InputForm";
 import { useDispatch } from "react-redux";
 import { saveProduct } from "../../../redux/slices/productSlice";
+import FileBase from "react-file-base64";
 
 const generateAddProductFormValues = (selectedProduct) => {
   return {
@@ -44,22 +45,22 @@ const generateAddProductFormValues = (selectedProduct) => {
 
 const BGForm = () => {
   const dispatch = useDispatch();
+  const [image, setImage] = useState("");
 
-  const {
-    formValues: productFormValues,
-    onInputChange,
-    setFormValues,
-  } = useForm({
+  const { formValues: productFormValues, onInputChange } = useForm({
     defaultFormValues: generateAddProductFormValues(),
   });
 
   const saveProductHandler = (event) => {
+    event.preventDefault();
     const name = productFormValues.name.value;
     const description = productFormValues.description.value;
     const category = productFormValues.category.value;
     const price = productFormValues.price.value;
 
-    dispatch(saveProduct({ product: { name, description, category, price } }));
+    dispatch(
+      saveProduct({ product: { name, description, category, price, image } })
+    );
   };
 
   return (
@@ -97,6 +98,13 @@ const BGForm = () => {
           onChange={onInputChange}
           error={productFormValues.price.error}
           helpertext={productFormValues.price.error}
+        />
+        <FileBase
+          type="file"
+          multiple={false}
+          onDone={({ base64 }) => {
+            setImage(base64);
+          }}
         />
         <div className={styles.actions}>
           <button>Save</button>

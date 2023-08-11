@@ -5,6 +5,7 @@ export const saveProduct = createAsyncThunk(
   "product/saveProduct",
   async ({ product }) => {
     const { data } = await instance.post("/products", { product });
+
     return data;
   }
 );
