@@ -1,18 +1,18 @@
 .button {
-    width: 100px;
-    padding: 12px 20px;
-    margin: 0 3px;
-    border: 0;
-    border-radius: 5px;
-    box-sizing: border-box;
-    color: white;
-    background-color: black;
-    font-size: medium;
-    font-weight: 500;
+  width: 100px;
+  padding: 12px 20px;
+  margin: 0 5px;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+  font-size: medium;
+  font-weight: 500;
 }
 
 .button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: rgb(241,132,54);
+  cursor: pointer;
+  color: white;
+  background-color: rgb(241, 132, 54);
 }

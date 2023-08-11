@@ -6,19 +6,12 @@ import EcommerceNavbar from "./EcommerceNavbar/EcommerceNavbar";
 import Navbar from "./Navbar/Navbar";
 
 const Header = () => {
-
   return (
     <>
       <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <Logo />
-        </div>
-        <div className={styles.container}>
-          <Inputsearch />
-        </div>
-        <div className={styles.container}>
-          <EcommerceNavbar />
-        </div>
+        <Logo />
+        <Inputsearch />
+        <EcommerceNavbar />
       </div>
       <Navbar />
     </>
