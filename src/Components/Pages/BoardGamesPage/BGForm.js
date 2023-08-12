@@ -5,6 +5,7 @@ import InputForm from "../../../UI/InputForm";
 import { useDispatch } from "react-redux";
 import { saveProduct } from "../../../redux/slices/productSlice";
 import FileBase from "react-file-base64";
+import { useNavigate } from "react-router-dom";
 
 const generateAddProductFormValues = (selectedProduct) => {
   return {
@@ -45,6 +46,7 @@ const generateAddProductFormValues = (selectedProduct) => {
 
 const BGForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const [image, setImage] = useState("");
 
   const { formValues: productFormValues, onInputChange } = useForm({
@@ -61,6 +63,7 @@ const BGForm = () => {
     dispatch(
       saveProduct({ product: { name, description, category, price, image } })
     );
+    navigate('/boardgames')
   };
 
   return (

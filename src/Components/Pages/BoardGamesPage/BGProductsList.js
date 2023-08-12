@@ -6,9 +6,21 @@ const BGProductsList = () => {
   const productsData = useSelector((state) => state.user.product.productsData);
   const dispatch = useDispatch();
 
+  const fetchProductsData = () => {
+    const name = productsData.name;
+    const description = productsData.description;
+    const category = productsData.category;
+    const price = productsData.price;
+    const image = productsData.image;
+
+    dispatch(
+      fetchProducts({ products: { name, description, category, price, image } })
+    );
+  };
+
   useEffect(() => {
-    dispatch(fetchProducts({ products: {} }));
-  }, [ dispatch]);
+    fetchProductsData();
+  }, []);
 
   return (
     <div>
