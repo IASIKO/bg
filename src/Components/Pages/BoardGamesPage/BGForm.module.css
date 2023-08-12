@@ -1,38 +1,37 @@
 .form {
-    max-width: 30rem;
-    margin: 2rem auto;
-  }
-  
-  .actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .actions button {
-    font: inherit;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-    background-color: #000000;
-    color: white;
-    border: none;
-    margin-top: 10px;
-  }
-  
-  .actions a {
-    text-decoration: none;
-    background-color: transparent;
-    color: #000000;
-  }
-  
-  .actions button:hover {
-    background-color: rgb(241, 132, 54);
-  }
-  
-  .actions a:hover {
-    color: rgb(241, 132, 54);
-  }
-  
+  max-width: 30rem;
+  margin: 2rem auto;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.actions button {
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  margin-top: 10px;
+}
+
+.actions a {
+  text-decoration: none;
+  background-color: transparent;
+  color: #000000;
+}
+
+.actions button:hover {
+  background-color: rgb(241, 132, 54);
+}
+
+.actions a:hover {
+  color: rgb(241, 132, 54);
+}

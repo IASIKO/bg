@@ -10,11 +10,20 @@ export const saveProduct = createAsyncThunk(
   }
 );
 
+export const fetchProducts = createAsyncThunk(
+  "product/fetchProducts",
+  async () => {
+    const { data } = await instance.get("/products");
+    return data;
+  }
+);
+
 const productSlice = createSlice({
   name: "product",
   initialState: {
     loading: false,
     error: null,
+    productsData: [],
   },
 
   extraReducers: (builder) => {
@@ -27,6 +36,18 @@ const productSlice = createSlice({
     builder.addCase(saveProduct.rejected, (state) => {
       state.loading = false;
       state.error = "Something went wrong";
+    });
+
+    builder.addCase(fetchProducts.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
+      state.loading = false;
+      state.productsData = action.payload.products;
+    });
+    builder.addCase(fetchProducts.rejected, (state) => {
+      state.loading = false;
+      state.error = "couldn't fetch home page products, please refresh";
     });
   },
 });
