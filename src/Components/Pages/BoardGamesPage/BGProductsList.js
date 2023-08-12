@@ -1,10 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../../redux/slices/productSlice";
+import {
+  fetchProducts,
+  setSelectedProduct,
+} from "../../../redux/slices/productSlice";
+import { useNavigate } from "react-router-dom";
+import { isUserAdmin } from "../../../application/utilis";
 
 const BGProductsList = () => {
   const productsData = useSelector((state) => state.user.product.productsData);
+  const userInfo = useSelector((state) => state.user.user.userData);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const fetchProductsData = () => {
     const name = productsData.name;
@@ -22,6 +30,11 @@ const BGProductsList = () => {
     fetchProductsData();
   }, []);
 
+  const onEditHandler = (product) => {
+    dispatch(setSelectedProduct(product));
+    navigate(`/boardgames/edit/:${product._id}`);
+  };
+
   return (
     <div>
       {productsData.map((product) => {
@@ -32,6 +45,9 @@ const BGProductsList = () => {
             <p>{product.price}</p>
             <p>{product.category}</p>
             <img src={product.image} alt={product.name} />
+            {isUserAdmin(userInfo) && (
+              <button onClick={() => onEditHandler(product._id)}>Edit</button>
+            )}
           </div>
         );
       })}

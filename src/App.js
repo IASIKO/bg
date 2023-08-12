@@ -23,10 +23,8 @@ const App = () => {
         { path: "/", element: <Home /> },
         { path: "/:bgId", element: <BGDetailPage /> },
         { path: "/boardgames", element: <BoardGamesPage /> },
-        { path: "/boardgames/new", element:
-        
-        <BGnew /> 
-      },
+        { path: "/boardgames/new", element:<BGnew /> },
+        { path: "/boardgames/edit/:productId", element:<BGnew /> },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },
