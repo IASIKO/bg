@@ -49,7 +49,7 @@ const BGForm = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState("");
 
-  const selectedProduct = useSelector((state) => state.product.selectedProduct);
+  const selectedProduct = useSelector((state) => state.user.product.selectedProduct);
   console.log(selectedProduct);
 
   const {

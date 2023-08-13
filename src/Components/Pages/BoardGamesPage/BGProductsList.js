@@ -46,7 +46,7 @@ const BGProductsList = () => {
               <h2>{product.name}</h2>
               <p>{product.price} ₾</p>
               {isUserAdmin(userInfo) && (
-                <button onClick={() => onEditHandler(product._id)}>Edit</button>
+                <button onClick={() => onEditHandler(product)}>Edit</button>
               )}
             </li>
           );
