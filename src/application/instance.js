@@ -23,6 +23,6 @@ instance.interceptors.request.use(async (req) => {
   });
 
   localStorage.setItem("token", data.token);
-  req.headers.Authorization = `Bearer ${token}`;
+  req.headers.Authorization = `Bearer ${data.token}`;
   return req;
 });
