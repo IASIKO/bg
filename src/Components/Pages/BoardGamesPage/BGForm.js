@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useForm from "../../../application/hooks/useForm";
 import styles from "./BGForm.module.css";
 import InputForm from "../../../UI/InputForm";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { saveProduct } from "../../../redux/slices/productSlice";
 import FileBase from "react-file-base64";
 import { useNavigate } from "react-router-dom";
@@ -46,10 +46,17 @@ const generateAddProductFormValues = (selectedProduct) => {
 
 const BGForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [image, setImage] = useState("");
 
-  const { formValues: productFormValues, onInputChange } = useForm({
+  const selectedProduct = useSelector((state) => state.product.selectedProduct);
+  console.log(selectedProduct);
+
+  const {
+    formValues: productFormValues,
+    onInputChange,
+    setFormValues,
+  } = useForm({
     defaultFormValues: generateAddProductFormValues(),
   });
 
@@ -63,8 +70,15 @@ const BGForm = () => {
     dispatch(
       saveProduct({ product: { name, description, category, price, image } })
     );
-    navigate('/boardgames')
+    navigate("/boardgames");
   };
+
+  useEffect(() => {
+    if (selectedProduct) {
+      setFormValues(generateAddProductFormValues(selectedProduct));
+      setImage(selectedProduct.image);
+    }
+  }, [selectedProduct]);
 
   return (
     <>

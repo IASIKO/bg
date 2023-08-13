@@ -23,12 +23,12 @@ const productSlice = createSlice({
   initialState: {
     loading: false,
     error: null,
-    selectedProducts: null,
+    selectedProduct: null,
     productsData: [],
   },
   reducers: {
     setSelectedProduct: (state, action) => {
-      state.selectedProducts = action.payload.product
+      state.selectedProduct = action.payload.product
     },
   },
 

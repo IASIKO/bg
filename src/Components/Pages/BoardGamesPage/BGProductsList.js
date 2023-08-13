@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import styles from "./BGProductsList.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchProducts,
@@ -36,22 +37,22 @@ const BGProductsList = () => {
   };
 
   return (
-    <div>
-      {productsData.map((product) => {
-        return (
-          <div key={product._id}>
-            <p>{product.name}</p>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <p>{product.category}</p>
-            <img src={product.image} alt={product.name} />
-            {isUserAdmin(userInfo) && (
-              <button onClick={() => onEditHandler(product._id)}>Edit</button>
-            )}
-          </div>
-        );
-      })}
-    </div>
+    <section>
+      <ul className={styles.productsList}>
+        {productsData.map((product) => {
+          return (
+            <li key={product._id}>
+              <img src={product.image} alt={product.name} />
+              <h2>{product.name}</h2>
+              <p>{product.price} ₾</p>
+              {isUserAdmin(userInfo) && (
+                <button onClick={() => onEditHandler(product._id)}>Edit</button>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 };
 
