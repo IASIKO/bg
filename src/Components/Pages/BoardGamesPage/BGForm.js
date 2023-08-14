@@ -49,8 +49,9 @@ const BGForm = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState("");
 
-  const selectedProduct = useSelector((state) => state.user.product.selectedProduct);
-  console.log(selectedProduct);
+  const selectedProduct = useSelector(
+    (state) => state.user.product.selectedProduct
+  );
 
   const {
     formValues: productFormValues,
@@ -68,7 +69,17 @@ const BGForm = () => {
     const price = productFormValues.price.value;
 
     dispatch(
-      saveProduct({ product: { name, description, category, price, image } })
+      saveProduct({
+        product: {
+          name,
+          description,
+          category,
+          price,
+          image,
+          id: selectedProduct._id,
+        },
+        isUpdating: !!selectedProduct,
+      })
     );
     navigate("/boardgames");
   };

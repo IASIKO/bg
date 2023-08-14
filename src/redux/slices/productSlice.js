@@ -3,9 +3,11 @@ import { instance } from "../../application/instance";
 
 export const saveProduct = createAsyncThunk(
   "product/saveProduct",
-  async ({ product }) => {
-    const { data } = await instance.post("/products", { product });
-
+  async ({ product, isUpdating }, {dispatch}) => {
+    const endpoint = isUpdating ? `/products/${product.id}` : "/products";
+    const method = isUpdating ? "put" : "post";
+    const { data } = await instance[method](endpoint, { product });
+    dispatch(fetchProducts())
     return data;
   }
 );
@@ -28,7 +30,7 @@ const productSlice = createSlice({
   },
   reducers: {
     setSelectedProduct: (state, action) => {
-      state.selectedProduct = action.payload
+      state.selectedProduct = action.payload;
     },
   },
 
@@ -58,6 +60,6 @@ const productSlice = createSlice({
   },
 });
 
-export const {setSelectedProduct} = productSlice.actions
+export const { setSelectedProduct } = productSlice.actions;
 
 export const productReducer = productSlice.reducer;
