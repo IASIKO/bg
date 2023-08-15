@@ -16,6 +16,7 @@ const InputForm = ({ name, label, value, onChange, error, helpertext }) => {
         helpertext={helpertext}
         required
       />
+      {error && <span>{error}</span>}
     </p>
   );
 };
