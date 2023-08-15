@@ -1,3 +1,18 @@
-.sidebarWrapper{
-    width: 23%;
+.sidebarWrapper {
+  width: 23%;
+  text-align: center;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  margin-left: 0;
+}
+
+.categoriesList {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  list-style: none outside;
 }
