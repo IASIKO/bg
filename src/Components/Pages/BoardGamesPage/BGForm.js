@@ -101,7 +101,6 @@ const BGForm = () => {
           value={productFormValues.name.value}
           onChange={onInputChange}
           error={productFormValues.name.error}
-          helpertext={productFormValues.name.error}
         />
         <InputForm
           name="description"
@@ -109,7 +108,6 @@ const BGForm = () => {
           value={productFormValues.description.value}
           onChange={onInputChange}
           error={productFormValues.description.error}
-          helpertext={productFormValues.description.error}
         />
         <InputForm
           name="category"
@@ -117,7 +115,6 @@ const BGForm = () => {
           value={productFormValues.category.value}
           onChange={onInputChange}
           error={productFormValues.category.error}
-          helpertext={productFormValues.category.error}
         />
         <InputForm
           name="price"
@@ -125,7 +122,6 @@ const BGForm = () => {
           value={productFormValues.price.value}
           onChange={onInputChange}
           error={productFormValues.price.error}
-          helpertext={productFormValues.price.error}
         />
         <FileBase
           type="file"

@@ -59,7 +59,6 @@ const LoginForm = () => {
           value={loginFormValues.email.value}
           onChange={onInputChange}
           error={loginFormValues.email.error}
-          helpertext={loginFormValues.email.error}
         />
         <InputForm
           name="password"
@@ -67,7 +66,6 @@ const LoginForm = () => {
           value={loginFormValues.password.value}
           onChange={onInputChange}
           error={loginFormValues.password.error}
-          helpertext={loginFormValues.password.error}
         />
         <div className={styles.actions}>
           <Link to="/register">Don't have an account? Sign Up here.</Link>

@@ -79,7 +79,6 @@ const RegisterForm = (props) => {
           value={formValues.firstName.value}
           onChange={onInputChange}
           error={formValues.firstName.error}
-          helpertext={formValues.firstName.error}
         />
         <InputForm
           name="lastName"
@@ -87,7 +86,6 @@ const RegisterForm = (props) => {
           value={formValues.lastName.value}
           onChange={onInputChange}
           error={formValues.lastName.error}
-          helpertext={formValues.lastName.error}
         />
         <InputForm
           name="email"
@@ -95,7 +93,6 @@ const RegisterForm = (props) => {
           value={formValues.email.value}
           onChange={onInputChange}
           error={formValues.email.error}
-          helpertext={formValues.email.error}
         />
         <InputForm
           name="password"
@@ -103,7 +100,6 @@ const RegisterForm = (props) => {
           value={formValues.password.value}
           onChange={onInputChange}
           error={formValues.password.error}
-          helpertext={formValues.password.error}
         />
         <div className={styles.actions}>
           <Link to="/login">Already have an account? Login here.</Link>
