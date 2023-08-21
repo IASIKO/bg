@@ -20,6 +20,14 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+export const fetchCategoryProducts = createAsyncThunk(
+  "product/fetchCategoryProducts",
+  async (url) => {
+    const { data } = await instance.get(`/products/categories/${url}`);
+    return data;
+  }
+);
+
 const productSlice = createSlice({
   name: "product",
   initialState: {
@@ -28,6 +36,7 @@ const productSlice = createSlice({
     selectedProduct: null,
     productsData: [],
     categories: [],
+    categoryProducts: [],
   },
   reducers: {
     setSelectedProduct: (state, action) => {
@@ -53,11 +62,23 @@ const productSlice = createSlice({
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.loading = false;
       state.productsData = action.payload.products;
-      state.categories = action.payload.categories
+      state.categories = action.payload.categories;
     });
     builder.addCase(fetchProducts.rejected, (state) => {
       state.loading = false;
       state.error = "couldn't fetch home page products, please refresh";
+    });
+
+    builder.addCase(fetchCategoryProducts.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchCategoryProducts.fulfilled, (state, action) => {
+      state.loading = false;
+      state.categoryProducts = action.payload;
+    });
+    builder.addCase(fetchCategoryProducts.rejected, (state) => {
+      state.loading = false;
+      state.error = "couldn't fetch category products";
     });
   },
 });

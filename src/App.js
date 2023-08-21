@@ -12,7 +12,8 @@ import Dashboard from "./Components/Pages/My-account/Dashboard";
 import Orders from "./Components/Pages/My-account/Orders";
 import Addresses from "./Components/Pages/My-account/Addresses";
 import AccountDetails from "./Components/Pages/My-account/AccountDetails";
-import BGnew from "./Components/Pages/BoardGamesPage/BGForm";
+import BGForm from "./Components/Pages/BoardGamesPage/BGForm";
+import CategoryProducts from "./Components/Pages/BoardGamesPage/CategoryProducts";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -23,8 +24,12 @@ const App = () => {
         { path: "/", element: <Home /> },
         { path: "/:bgId", element: <BGDetailPage /> },
         { path: "/boardgames", element: <BoardGamesPage /> },
-        { path: "/boardgames/new", element:<BGnew /> },
-        { path: "/boardgames/edit/:productId", element:<BGnew /> },
+        { path: "/boardgames/new", element: <BGForm /> },
+        { path: "/boardgames/edit/:productId", element: <BGForm /> },
+        {
+          path: "/boardgames/categories/:categoryName",
+          element: <CategoryProducts />,
+        },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },
