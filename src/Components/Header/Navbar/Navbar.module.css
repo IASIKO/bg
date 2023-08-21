@@ -67,8 +67,8 @@
 
 .infoContainer {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
 }
 
 .infoContainer span {
@@ -82,7 +82,7 @@
   height: 25px;
 }
 
-.icon :hover {
+.icon:hover {
   color: rgb(241, 132, 54);
   cursor: pointer;
 }

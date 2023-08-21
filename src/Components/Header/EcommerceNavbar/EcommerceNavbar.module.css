@@ -10,10 +10,6 @@
   position: relative;
 }
 
-.cartIcon :hover {
-  color: rgb(129, 138, 145);
-}
-
 .cartIcon span {
   display: block;
   font-size: 10px;
@@ -28,4 +24,8 @@
   top: -0.7em;
   inset-inline-end: -0.7em;
   background-color: #d9534f;
+}
+
+.cartIcon :hover {
+  color: rgb(129, 138, 145);
 }

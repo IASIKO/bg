@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const CategorySideBar = () => {
   const categories = useSelector((state) => state.user.product.categories);
-  console.log(categories);
   return (
     <section className={styles.sidebarWrapper}>
       <ul className={styles.categoriesList}>
