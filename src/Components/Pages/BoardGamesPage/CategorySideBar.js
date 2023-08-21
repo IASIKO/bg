@@ -9,7 +9,11 @@ const CategorySideBar = () => {
     <section className={styles.sidebarWrapper}>
       <ul className={styles.categoriesList}>
         {categories.map((item) => {
-          return <li key={item._id}>{item.name}</li>;
+          return (
+            <li key={item._id}>
+              <span>{item.name}</span>
+            </li>
+          );
         })}
       </ul>
     </section>
