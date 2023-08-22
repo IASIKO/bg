@@ -12,7 +12,7 @@ const CategorySideBar = () => {
         {categories.map((item) => {
           return (
             <li key={item._id}>
-              <Link to={`/boardgames/categories/:${item.name}`}>
+              <Link to={`/boardgames/categories/${item.name}`}>
                 {item.name}
               </Link>
             </li>

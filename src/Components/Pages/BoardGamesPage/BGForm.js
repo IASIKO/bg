@@ -76,7 +76,7 @@ const BGForm = () => {
           category,
           price,
           image,
-          id: selectedProduct._id,
+          id: selectedProduct?._id,
         },
         isUpdating: !!selectedProduct,
       })

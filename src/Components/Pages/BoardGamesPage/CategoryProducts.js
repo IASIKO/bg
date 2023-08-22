@@ -10,9 +10,8 @@ import { isUserAdmin } from "../../../application/utilis";
 
 const CategoryProducts = () => {
   const categoryProductsData = useSelector(
-    (state) => state.user.product.productsData
+    (state) => state.user.product.categoryProducts
   );
-  console.log(categoryProductsData);
   const userInfo = useSelector((state) => state.user.user.userData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -32,7 +31,7 @@ const CategoryProducts = () => {
   return (
     <section>
       <ul className={styles.productsList}>
-        {categoryProductsData.map((product) => {
+        {categoryProductsData?.map((product) => {
           return (
             <li key={product._id}>
               <img src={product.image} alt={product.name} />

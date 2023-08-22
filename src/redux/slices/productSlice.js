@@ -74,7 +74,7 @@ const productSlice = createSlice({
     });
     builder.addCase(fetchCategoryProducts.fulfilled, (state, action) => {
       state.loading = false;
-      state.categoryProducts = action.payload;
+      state.categoryProducts = action.payload.products
     });
     builder.addCase(fetchCategoryProducts.rejected, (state) => {
       state.loading = false;
