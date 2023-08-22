@@ -7,6 +7,8 @@ import {
 } from "../../../redux/slices/productSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { isUserAdmin } from "../../../application/utilis";
+import CategorySideBar from "./CategorySideBar";
+import BGContent from "../../../UI/BGContent";
 
 const CategoryProducts = () => {
   const categoryProductsData = useSelector(
@@ -29,22 +31,25 @@ const CategoryProducts = () => {
   };
 
   return (
-    <section>
-      <ul className={styles.productsList}>
-        {categoryProductsData?.map((product) => {
-          return (
-            <li key={product._id}>
-              <img src={product.image} alt={product.name} />
-              <h2>{product.name}</h2>
-              <p>{product.price} ₾</p>
-              {isUserAdmin(userInfo) && (
-                <button onClick={() => onEditHandler(product)}>Edit</button>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+    <BGContent>
+      <CategorySideBar />
+      <section>
+        <ul className={styles.productsList}>
+          {categoryProductsData?.map((product) => {
+            return (
+              <li key={product._id}>
+                <img src={product.image} alt={product.name} />
+                <h2>{product.name}</h2>
+                <p>{product.price} ₾</p>
+                {isUserAdmin(userInfo) && (
+                  <button onClick={() => onEditHandler(product)}>Edit</button>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </BGContent>
   );
 };
 
