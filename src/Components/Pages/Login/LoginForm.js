@@ -5,9 +5,6 @@ import { useDispatch } from "react-redux";
 import useForm from "../../../application/hooks/useForm";
 import { authanticateUser } from "../../../redux/slices/userSlice";
 import InputForm from "../../../UI/InputForm";
-// import useForm from "../../../../application/hooks/useForm";
-// import InputForm from "../../../../UI/InputForm";
-// import { authanticateUser } from "../../../../redux/slices/userSlice";
 
 const generateLoginFormValues = () => {
   return {
@@ -63,6 +60,7 @@ const LoginForm = () => {
         <InputForm
           name="password"
           label="Password"
+          type='password'
           value={loginFormValues.password.value}
           onChange={onInputChange}
           error={loginFormValues.password.error}

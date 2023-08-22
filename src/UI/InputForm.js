@@ -13,7 +13,7 @@ const InputForm = ({ name, label, value, onChange, error }) => {
         onChange={onChange}
         error={error}
         required
-        type={name === "price" ? "number" : "text"}
+        type={name === "price" ? "number" : name === "password" ? "password" : "text"}
         min={name === "price" ? 0 : undefined}
       />
       {error && <span>{error}</span>}
