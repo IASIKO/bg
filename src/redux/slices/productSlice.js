@@ -37,10 +37,18 @@ const productSlice = createSlice({
     productsData: [],
     categories: [],
     categoryProducts: [],
+    pagination: {
+      currentPage: 1,
+      itemsPerPage: 5,
+      totalPages: 1,
+    },
   },
   reducers: {
     setSelectedProduct: (state, action) => {
       state.selectedProduct = action.payload;
+    },
+    setPagination: (state, action) => {
+      state.pagination.currentPage = action.payload.currentPage;
     },
   },
 
@@ -63,6 +71,9 @@ const productSlice = createSlice({
       state.loading = false;
       state.productsData = action.payload.products;
       state.categories = action.payload.categories;
+      state.pagination.totalPages = Math.ceil(
+        action.payload.products.length / state.pagination.itemsPerPage
+      );
     });
     builder.addCase(fetchProducts.rejected, (state) => {
       state.loading = false;
@@ -74,7 +85,7 @@ const productSlice = createSlice({
     });
     builder.addCase(fetchCategoryProducts.fulfilled, (state, action) => {
       state.loading = false;
-      state.categoryProducts = action.payload.products
+      state.categoryProducts = action.payload.products;
     });
     builder.addCase(fetchCategoryProducts.rejected, (state) => {
       state.loading = false;
@@ -83,6 +94,6 @@ const productSlice = createSlice({
   },
 });
 
-export const { setSelectedProduct } = productSlice.actions;
+export const { setSelectedProduct, setPagination } = productSlice.actions;
 
 export const productReducer = productSlice.reducer;
