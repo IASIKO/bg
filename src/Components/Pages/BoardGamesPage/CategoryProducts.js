@@ -9,11 +9,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import { isUserAdmin } from "../../../application/utilis";
 import CategorySideBar from "./CategorySideBar";
 import BGContent from "../../../UI/BGContent";
+import Paginate from "../../../UI/Paginate";
 
 const CategoryProducts = () => {
   const categoryProductsData = useSelector(
     (state) => state.user.product.categoryProducts
   );
+
+  const { currentPage, totalPage } = useSelector(
+    (state) => state.user.product.pagination
+  );
+
   const userInfo = useSelector((state) => state.user.user.userData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -48,6 +54,7 @@ const CategoryProducts = () => {
             );
           })}
         </ul>
+        <Paginate currentPage={currentPage} totalPage={totalPage} />
       </section>
     </BGContent>
   );
