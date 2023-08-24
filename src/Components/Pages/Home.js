@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cover from "../Header/Cover";
 import Body from "../../UI/Body";
 import Categories from "../Pages/home/Categories";
