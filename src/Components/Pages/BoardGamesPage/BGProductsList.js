@@ -15,8 +15,6 @@ const BGProductsList = () => {
 
   const pagination = useSelector((state) => state.user.product.pagination);
 
-  console.log(pagination);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -51,7 +49,7 @@ const BGProductsList = () => {
           );
         })}
       </ul>
-      <Paginate/>
+      <Paginate />
     </section>
   );
 };

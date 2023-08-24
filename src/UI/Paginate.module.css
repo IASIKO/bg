@@ -5,8 +5,8 @@
 }
 
 .paginate button {
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: black;
+  color: white;
   border: 1px solid #ccc;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
@@ -15,7 +15,7 @@
 }
 
 .paginate button.active {
-  background-color: #007bff;
+  background-color: rgb(241, 132, 54);
   color: white;
 }
 
