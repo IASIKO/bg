@@ -5,6 +5,7 @@ const Categories = () => {
   return (
     <div>
         <h1 className={styles.categoriesTitle}>Categories</h1>
+        
     </div>
   )
 }

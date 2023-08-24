@@ -12,15 +12,14 @@ import Paginate from "../../../UI/Paginate";
 const BGProductsList = () => {
   const productsData = useSelector((state) => state.user.product.productsData);
   const userInfo = useSelector((state) => state.user.user.userData);
-
   const pagination = useSelector((state) => state.user.product.pagination);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+  // }, []);
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
