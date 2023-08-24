@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./BGProductsList.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchProducts,
-  setSelectedProduct,
-} from "../../../redux/slices/productSlice";
+import { setSelectedProduct } from "../../../redux/slices/productSlice";
 import { useNavigate } from "react-router-dom";
 import { isUserAdmin } from "../../../application/utilis";
 import Paginate from "../../../UI/Paginate";
@@ -16,10 +13,6 @@ const BGProductsList = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   dispatch(fetchProducts());
-  // }, []);
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
