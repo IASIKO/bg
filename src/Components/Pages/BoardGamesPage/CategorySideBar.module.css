@@ -1,5 +1,6 @@
+
 .sidebarWrapper {
-  width: 23%;
+  width: 30%;
   height: 100%;
   text-align: center;
   border-style: solid;
@@ -15,7 +16,6 @@
   cursor: pointer;
   text-decoration: none;
   color: #242c34;
-  fill: #242c34;
   font-family: sans-serif;
   font-weight: 600;
   padding: 15px;
