@@ -5,6 +5,7 @@ import { setSelectedProduct } from "../../../redux/slices/productSlice";
 import { useNavigate } from "react-router-dom";
 import { isUserAdmin } from "../../../application/utilis";
 import Paginate from "../../../UI/Paginate";
+import Sort from "../../../UI/Sort";
 
 const BGProductsList = () => {
   const productsData = useSelector((state) => state.user.product.productsData);
@@ -37,7 +38,7 @@ const BGProductsList = () => {
   };
 
   const handleChange = (value) => {
-    if (value == "none") {
+    if (value === "none") {
       setSort([...visibleProducts]);
     } else {
       let toType, toAscending;
@@ -71,14 +72,7 @@ const BGProductsList = () => {
 
   return (
     <section>
-      <label>Sort By</label>
-      <select onChange={(e) => handleChange(e.target.value)}>
-        <option value="none">Default</option>
-        <option value="ascending">Alphabetically, A-Z</option>
-        <option value="descending">Alphabetically, Z-A</option>
-        <option value="high">Low to high</option>
-        <option value="low">High to low</option>
-      </select>
+      <Sort handleChange={handleChange} />
       <ul className={styles.productsList}>
         {sort.map((product) => {
           return (
