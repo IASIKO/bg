@@ -17,7 +17,10 @@ const Categories = () => {
       <div className={styles.homeCategoriesContainer}>
         {categories.map((item) => {
           return (
-            <span onClick={() => onCategoryClickHandler(item.name)}>
+            <span
+              key={item._id}
+              onClick={() => onCategoryClickHandler(item.name)}
+            >
               {item.name}
             </span>
           );
