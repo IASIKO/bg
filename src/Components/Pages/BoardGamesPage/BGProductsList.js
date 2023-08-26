@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./BGProductsList.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedProduct } from "../../../redux/slices/productSlice";
@@ -15,12 +15,20 @@ const BGProductsList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
-  const visibleProducts = productsData.slice(
-    startIndex,
-    startIndex + pagination.itemsPerPage
-  );
-  const [sort, setSort] = useState(visibleProducts);
+  const [sort, setSort] = useState([]);
+
+  // const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
+  // const visibleProducts = productsData.slice(
+  //   startIndex,
+  //   startIndex + pagination.itemsPerPage
+  // );
+
+  useEffect(() => {
+    const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
+    const endIndex = startIndex + pagination.itemsPerPage;
+    const visibleProducts = productsData.slice(startIndex, endIndex);
+    setSort([...visibleProducts]);
+  }, [pagination.currentPage, productsData]);
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
@@ -39,7 +47,7 @@ const BGProductsList = () => {
 
   const handleChange = (value) => {
     if (value === "none") {
-      setSort([...visibleProducts]);
+      setSort([...sort]);
     } else {
       let toType, toAscending;
       switch (value) {
@@ -60,7 +68,7 @@ const BGProductsList = () => {
           toAscending = false;
           break;
       }
-      let current = [...visibleProducts];
+      let current = [...sort];
       current.sort((a, b) =>
         toType
           ? compare(a.name, b.name, toAscending)
