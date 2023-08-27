@@ -22,7 +22,7 @@ const BGProductsList = () => {
     const endIndex = startIndex + pagination.itemsPerPage;
     const visibleProducts = productsData.slice(startIndex, endIndex);
     setSort([...visibleProducts]);
-  }, [pagination.currentPage, productsData]);
+  }, [pagination.currentPage, productsData, pagination.itemsPerPage]);
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
@@ -60,6 +60,8 @@ const BGProductsList = () => {
         case "low":
           toType = false;
           toAscending = false;
+          break;
+        default:
           break;
       }
       let current = [...sort];

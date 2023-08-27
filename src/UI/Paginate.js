@@ -13,6 +13,7 @@ const Paginate = () => {
   const handlePageChange = (newPage) => {
     dispatch(setPagination({ currentPage: newPage }));
   };
+  
 
   return (
     <div className={styles.paginate}>
