@@ -17,12 +17,6 @@ const BGProductsList = () => {
 
   const [sort, setSort] = useState([]);
 
-  // const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
-  // const visibleProducts = productsData.slice(
-  //   startIndex,
-  //   startIndex + pagination.itemsPerPage
-  // );
-
   useEffect(() => {
     const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
     const endIndex = startIndex + pagination.itemsPerPage;
