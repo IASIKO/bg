@@ -40,3 +40,9 @@ Loader - npm install i framer-motion
 Photos - npm install file-base64
 
 API library - npm install axios
+
+icons - react-icons npm install react-icons
+
+route - npm install react-router-dom
+
+redux
