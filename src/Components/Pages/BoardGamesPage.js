@@ -15,7 +15,7 @@ const BoardGamesPage = () => {
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
