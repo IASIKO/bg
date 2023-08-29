@@ -20,7 +20,7 @@ const BGProductsList = () => {
   const [isOnBoardGamesPage, setIsOnBoardGamesPage] = useState(false);
 
   useEffect(() => {
-    setIsOnBoardGamesPage(location.pathname.includes("/boardgames")); // Update the state
+    setIsOnBoardGamesPage(location.pathname.includes("/boardgames"));
   }, [location.pathname]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const BGProductsList = () => {
     const visibleProducts = productsData.slice(startIndex, endIndex);
     setSort([...visibleProducts]);
     
-  }, [isOnBoardGamesPage, pagination.currentPage, productsData, pagination.itemsPerPage]);
+  }, [isOnBoardGamesPage, pagination.currentPage, productsData, pagination.itemsPerPage, dispatch]);
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));

@@ -1,5 +1,5 @@
 .addButton {
   display: flex;
-  justify-content: start;
-  margin: 40px;
+  justify-content: flex-start;
+  margin: 30px;
 }
