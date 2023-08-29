@@ -35,4 +35,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-Loader install npm i framer-motion
+Loader - npm install i framer-motion
+
+Photos - npm install file-base64
+
+API library - npm install axios
