@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ContactContent.module.css";
+import { FaMapMarkerAlt, FaPhone, FaRegEnvelopeOpen } from "react-icons/fa";
 
 const ContactContent = () => {
   return (
@@ -17,13 +18,32 @@ const ContactContent = () => {
           <br />
           <strong>ყოველდღე (12:00 – 22:00)</strong>
         </div>
-        <div></div>
+        <div className={styles.iconInfoContainer}>
+          <div>
+            <i>
+              <FaMapMarkerAlt />
+            </i>
+            <span>Tbilisi, 99 Tina Iosebidze St</span>
+          </div>
+          <div>
+            <i>
+              <FaPhone />
+            </i>
+            <span>999 99 99 99</span>
+          </div>
+          <div>
+            <i>
+              <FaRegEnvelopeOpen />
+            </i>
+            <span>info.boardgames@gmail.com</span>
+          </div>
+        </div>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.map}>
           <iframe
-            src="https://maps.google.com/maps?q=giorgi%20mirotadze%2014&t=m&z=10&output=embed&iwloc=near"
-            title="Giorgi Iaseshvili"
+            src="https://maps.google.com/maps?q=tina%20iosebidze%2099&t=m&z=10&output=embed&iwloc=near"
+            title="Tina Iosebidze"
           ></iframe>
         </div>
       </div>
