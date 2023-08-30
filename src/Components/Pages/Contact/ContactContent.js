@@ -22,44 +22,48 @@ const ContactContent = () => {
         </div>
 
         <div className={styles.infoWrapper}>
-          
+          <div className={styles.infoContainer}>
+            <div className={styles.iconInfoContainer}>
+              <i>
+                <FaPhone />
+              </i>
+            </div>
+            <div className={styles.textInfoContainer}>
+              <h3>Phone</h3>
+              <p>
+                <span>999 99 99 99</span>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.infoContainer}>
+            <div className={styles.iconInfoContainer}>
+              <i>
+                <FaRegEnvelopeOpen />
+              </i>
+            </div>
+            <div className={styles.textInfoContainer}>
+              <h3>E-mail</h3>
+              <p>
+                <span>info.boardgames@gmail.com</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.infoContainer}>
           <div className={styles.iconInfoContainer}>
             <i>
-              <FaPhone />
+              <FaMapMarkerAlt />
             </i>
           </div>
           <div className={styles.textInfoContainer}>
-            <h3>Phone</h3>
+            <h3>Address</h3>
             <p>
-              <span>999 99 99 99</span>
-            </p>
-          </div>
-
-          <div className={styles.iconInfoContainer}>
-            <i>
-              <FaRegEnvelopeOpen />
-            </i>
-          </div>
-          <div className={styles.textInfoContainer}>
-            <h3>E-mail</h3>
-            <p>
-              <span>info.boardgames@gmail.com</span>
+              <span>Tbilisi, 99 Tina Iosebidze St</span>
             </p>
           </div>
         </div>
-
-        <div className={styles.iconInfoContainer}>
-          <i>
-            <FaMapMarkerAlt />
-          </i>
-        </div>
-        <div className={styles.textInfoContainer}>
-          <h3>Address</h3>
-          <p>
-            <span>Tbilisi, 99 Tina Iosebidze St</span>
-          </p>
-        </div>
-
       </div>
 
       <div className={styles.contentContainer}>

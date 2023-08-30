@@ -39,10 +39,9 @@
 }
 
 .infoWrapper {
-  width: 33%;
   display: flex;
   text-align: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .iconInfoContainer {
