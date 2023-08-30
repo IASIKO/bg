@@ -19,12 +19,7 @@ const ContactContent = () => {
           <strong>ყოველდღე (12:00 – 22:00)</strong>
         </div>
         <div className={styles.iconInfoContainer}>
-          <div>
-            <i>
-              <FaMapMarkerAlt />
-            </i>
-            <span>Tbilisi, 99 Tina Iosebidze St</span>
-          </div>
+          
           <div>
             <i>
               <FaPhone />
@@ -36,6 +31,12 @@ const ContactContent = () => {
               <FaRegEnvelopeOpen />
             </i>
             <span>info.boardgames@gmail.com</span>
+          </div>
+          <div>
+            <i>
+              <FaMapMarkerAlt />
+            </i>
+            <span>Tbilisi, 99 Tina Iosebidze St</span>
           </div>
         </div>
       </div>
