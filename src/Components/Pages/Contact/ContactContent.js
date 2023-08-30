@@ -18,28 +18,52 @@ const ContactContent = () => {
           <br />
           <strong>ყოველდღე (12:00 – 22:00)</strong>
         </div>
+
+        <div>
+          <div className={styles.iconInfoContainer}>
+            <div>
+              <i>
+                <FaPhone />
+              </i>
+            </div>
+          </div>
+          <div className={styles.textInfoContainer}>
+            <h3>Phone</h3>
+            <p>
+              <span>999 99 99 99</span>
+            </p>
+          </div>
+
+          <div className={styles.iconInfoContainer}>
+            <div>
+              <i>
+                <FaRegEnvelopeOpen />
+              </i>
+            </div>
+            <div className={styles.textInfoContainer}>
+              <h3>E-mail</h3>
+              <p>
+                <span>info.boardgames@gmail.com</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className={styles.iconInfoContainer}>
-          
-          <div>
-            <i>
-              <FaPhone />
-            </i>
-            <span>999 99 99 99</span>
-          </div>
-          <div>
-            <i>
-              <FaRegEnvelopeOpen />
-            </i>
-            <span>info.boardgames@gmail.com</span>
-          </div>
           <div>
             <i>
               <FaMapMarkerAlt />
             </i>
-            <span>Tbilisi, 99 Tina Iosebidze St</span>
+          </div>
+          <div className={styles.textInfoContainer}>
+            <h3>Address</h3>
+            <p>
+              <span>Tbilisi, 99 Tina Iosebidze St</span>
+            </p>
           </div>
         </div>
       </div>
+
       <div className={styles.contentContainer}>
         <div className={styles.map}>
           <iframe
