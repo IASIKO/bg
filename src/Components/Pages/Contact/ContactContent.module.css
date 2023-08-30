@@ -42,20 +42,24 @@
   margin: 30px;
   display: flex;
   text-align: center;
+  margin: 20px;
 }
 
 .iconInfoContainer div {
   display: grid;
+  grid-row-gap: 10px;
 }
 
 .iconInfoContainer div i {
-  font-size: 40px;
-  color: #69727d;
+  font-size: 41px;
+  color: #4A4A4A;
 }
 
 .iconInfoContainer div i:hover {
   color: rgb(241, 132, 54);
-  transition: 0.5s;
+  transition: all 0.5s;
+  font-size: 50px;
+  
 }
 .map iframe {
   width: 100%;
