@@ -11,14 +11,14 @@
   margin: 30px;
 }
 
-.contentContainer h1 {
+.about h1 {
   color: #242c34;
   font-family: "roboto mt", Sans-serif;
   font-size: 2.6em;
   line-height: 1.3em;
 }
 
-.contentContainer p {
+.about p {
   font-family: inherit;
   font-weight: inherit;
   color: #7a7a7a;
@@ -38,34 +38,28 @@
   color: #7a7a7a;
 }
 
-.iconInfoContainer {
+.infoWrapper {
+  width: 33%;
   display: flex;
   text-align: center;
   justify-content: space-between;
 }
 
-.iconInfoContainer div {
-  width: 100%;
+.iconInfoContainer {
   display: grid;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
 
-.iconInfoContainer div i {
-  display: block;
+.iconInfoContainer i {
   font-size: 41px;
   color: #4a4a4a;
 }
 
-.iconInfoContainer div i:hover {
+.iconInfoContainer i:hover {
   color: rgb(241, 132, 54);
   transition: all 0.5s;
   font-size: 50px;
-}
-
-.textInfoContainer{
-  margin: 0;
-  padding: 0;
 }
 
 .map iframe {
