@@ -41,13 +41,10 @@
 .infoWrapper {
   display: flex;
   text-align: center;
-  /* justify-content: space-between; */
 }
 
-.iconInfoContainer {
-  display: grid;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+.infoContainer{
+  margin: 10px;
 }
 
 .iconInfoContainer i {
