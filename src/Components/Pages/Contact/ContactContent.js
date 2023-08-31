@@ -49,19 +49,19 @@ const ContactContent = () => {
               </p>
             </div>
           </div>
-        </div>
 
-        <div className={styles.infoContainer}>
-          <div className={styles.iconInfoContainer}>
-            <i>
-              <FaMapMarkerAlt />
-            </i>
-          </div>
-          <div className={styles.textInfoContainer}>
-            <h3>Address</h3>
-            <p>
-              <span>Tbilisi, 99 Tina Iosebidze St</span>
-            </p>
+          <div className={styles.infoContainer}>
+            <div className={styles.iconInfoContainer}>
+              <i>
+                <FaMapMarkerAlt />
+              </i>
+            </div>
+            <div className={styles.textInfoContainer}>
+              <h3>Address</h3>
+              <p>
+                <span>Tbilisi, 99 Tina Iosebidze St</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
