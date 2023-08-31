@@ -43,7 +43,7 @@
   text-align: center;
 }
 
-.infoContainer{
+.infoContainer {
   margin: 10px;
 }
 
@@ -63,5 +63,6 @@
   height: 500px;
   border: none;
   line-height: 1;
-  filter: brightness( 100% ) contrast( 100% ) saturate( 8% ) blur( 0px ) hue-rotate( 175deg );
+  filter: brightness(100%) contrast(100%) saturate(8%) blur(0px)
+    hue-rotate(175deg);
 }
