@@ -45,9 +45,9 @@ const BGProductsList = () => {
     dispatch,
   ]);
 
-  const isProductInCart = cartItems?.find((item, index) => {
-    return item.product._id === sort[index]._id;
-  });
+  const isProductInCart = (productId) => {
+    return cartItems.some((item) => item.product._id === productId);
+  };
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
@@ -110,7 +110,7 @@ const BGProductsList = () => {
               <img src={product.image} alt={name} />
               <h2>{name}</h2>
               <p>{price} ₾</p>
-              {isProductInCart ? (
+              {isProductInCart(_id) ? (
                 <>
                   <button onClick={() => dispatch(removeFromCart(product))}>
                     -
