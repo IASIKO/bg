@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "./BGProductsList.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setPagination, setSelectedProduct } from "../../../redux/slices/productSlice";
+import {
+  setPagination,
+  setSelectedProduct,
+} from "../../../redux/slices/productSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import { isUserAdmin } from "../../../application/utilis";
 import Paginate from "../../../UI/Paginate";
 import Sort from "../../../UI/Sort";
+import { addToCart, removeFromCart } from "../../../redux/slices/cartSlice";
 
 const BGProductsList = () => {
   const productsData = useSelector((state) => state.user.product.productsData);
@@ -28,13 +32,17 @@ const BGProductsList = () => {
       dispatch(setPagination({ currentPage: 1 }));
     }
 
-
     const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
     const endIndex = startIndex + pagination.itemsPerPage;
     const visibleProducts = productsData.slice(startIndex, endIndex);
     setSort([...visibleProducts]);
-    
-  }, [isOnBoardGamesPage, pagination.currentPage, productsData, pagination.itemsPerPage, dispatch]);
+  }, [
+    isOnBoardGamesPage,
+    pagination.currentPage,
+    productsData,
+    pagination.itemsPerPage,
+    dispatch,
+  ]);
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
@@ -91,11 +99,16 @@ const BGProductsList = () => {
       <Sort handleChange={handleChange} />
       <ul className={styles.productsList}>
         {sort.map((product) => {
+          const { _id, name, price } = product;
           return (
-            <li key={product._id}>
-              <img src={product.image} alt={product.name} />
-              <h2>{product.name}</h2>
-              <p>{product.price} ₾</p>
+            <li key={_id}>
+              <img src={product.image} alt={name} />
+              <h2>{name}</h2>
+              <p>{price} ₾</p>
+              <button onClick={() => dispatch(addToCart(_id, name, price))}>
+                +
+              </button>
+              <button onClick={() => dispatch(removeFromCart(_id))}>-</button>
               {isUserAdmin(userInfo) && (
                 <button onClick={() => onEditHandler(product)}>Edit</button>
               )}
