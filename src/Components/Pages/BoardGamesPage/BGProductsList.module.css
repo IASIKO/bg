@@ -42,7 +42,7 @@
 }
 
 .productsList li button {
-  width: 100px;
+  width: auto;
   padding: 12px 20px;
   margin: 10px;
   border: 0;

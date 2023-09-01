@@ -15,17 +15,17 @@ const cartSlice = createSlice({
         (item) => item.product._id === productId
       );
       if (cartItem) {
-        const updatedCart = state.cartItems.map((cartItem) =>
-          cartItem.product._id === productId
+        const updatedCart = state.cartItems.map((item) =>
+          item.product._id === productId
             ? {
-                ...cartItem,
+                ...item,
                 quantity: cartItem.quantity + 1,
               }
-            : cartItem
+            : item
         );
         state.cartItems = updatedCart;
       } else {
-        state.cartItems.push({
+        state.cartItems?.push({
           product,
           quantity: 1,
         });
@@ -42,16 +42,16 @@ const cartSlice = createSlice({
           (item) => item.product._id !== productId
         );
       } else {
-        updatedCart = state.cartItems.map((cartItem) =>
-          cartItem.product._id === productId
+        updatedCart = state.cartItems.map((item) =>
+          item.product._id === productId
             ? {
-                ...cartItem,
+                ...item,
                 quantity: cartItem.quantity - 1,
               }
-            : cartItem
+            : item
         );
       }
-      state.cartItems = updatedCart; 
+      state.cartItems = updatedCart;
     },
     clearCart: (state) => {
       state.cartItems = [];

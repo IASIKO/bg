@@ -15,6 +15,8 @@ const BGProductsList = () => {
   const productsData = useSelector((state) => state.user.product.productsData);
   const userInfo = useSelector((state) => state.user.user.userData);
   const pagination = useSelector((state) => state.user.product.pagination);
+  const cartItems = useSelector((state) => state.user.cart.cartItems);
+  console.log(cartItems);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,6 +45,10 @@ const BGProductsList = () => {
     pagination.itemsPerPage,
     dispatch,
   ]);
+
+  const isProductInCart = cartItems?.find(
+    (item) => item.product._id === productsData._id
+  );
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
@@ -105,10 +111,20 @@ const BGProductsList = () => {
               <img src={product.image} alt={name} />
               <h2>{name}</h2>
               <p>{price} ₾</p>
-              <button onClick={() => dispatch(addToCart(_id, name, price))}>
-                +
-              </button>
-              <button onClick={() => dispatch(removeFromCart(_id))}>-</button>
+              {isProductInCart ? (
+                <>
+                  <button onClick={() => dispatch(removeFromCart(product))}>
+                    -
+                  </button>
+                  <button onClick={() => dispatch(addToCart(product))}>
+                    +
+                  </button>
+                </>
+              ) : (
+                <button onClick={() => dispatch(addToCart(product))}>
+                  Add
+                </button>
+              )}
               {isUserAdmin(userInfo) && (
                 <button onClick={() => onEditHandler(product)}>Edit</button>
               )}
