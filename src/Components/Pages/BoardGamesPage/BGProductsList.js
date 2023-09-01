@@ -16,7 +16,6 @@ const BGProductsList = () => {
   const userInfo = useSelector((state) => state.user.user.userData);
   const pagination = useSelector((state) => state.user.product.pagination);
   const cartItems = useSelector((state) => state.user.cart.cartItems);
-  console.log(cartItems);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -46,9 +45,9 @@ const BGProductsList = () => {
     dispatch,
   ]);
 
-  const isProductInCart = cartItems?.find(
-    (item) => item.product._id === productsData._id
-  );
+  const isProductInCart = cartItems?.find((item, index) => {
+    return item.product._id === sort[index]._id;
+  });
 
   const onEditHandler = (product) => {
     dispatch(setSelectedProduct(product));
