@@ -24,6 +24,11 @@ const BGProductsList = () => {
   const [sort, setSort] = useState([]);
   const [isOnBoardGamesPage, setIsOnBoardGamesPage] = useState(false);
 
+  const { currentPage, totalPage } = useSelector(
+    (state) => state.user.product.pagination
+  );
+
+
   useEffect(() => {
     setIsOnBoardGamesPage(location.pathname.includes("/boardgames"));
   }, [location.pathname]);
@@ -131,7 +136,7 @@ const BGProductsList = () => {
           );
         })}
       </ul>
-      <Paginate />
+      <Paginate currentPage={currentPage} totalPage={totalPage} />
     </section>
   );
 };

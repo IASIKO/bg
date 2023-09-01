@@ -39,7 +39,7 @@ const productSlice = createSlice({
     categoryProducts: [],
     pagination: {
       currentPage: 1,
-      itemsPerPage: 4,
+      itemsPerPage: 2,
       totalPages: 1,
     },
   },
