@@ -32,7 +32,7 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, action) => {
-      const productId = action.payload;
+      const productId = action.payload._id;
       const cartItem = state.cartItems?.find(
         (item) => item.product._id === productId
       );
