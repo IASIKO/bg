@@ -25,8 +25,8 @@ const CategoryProducts = () => {
         <Loader />
       ) : (
         <BGContent>
-          <CategorySideBar />
-          <BGProductsList />
+          <CategorySideBar/>
+          <BGProductsList/>
         </BGContent>
       )}
     </>
