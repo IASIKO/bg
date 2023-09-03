@@ -5,10 +5,13 @@ import { useParams } from "react-router-dom";
 import CategorySideBar from "./CategorySideBar";
 import BGContent from "../../../UI/BGContent";
 import Loader from "../../../UI/Loader";
-import BGProductsList from "./BGProductsList";
+import Product from "./Product";
 
 const CategoryProducts = () => {
   const isLoading = useSelector((state) => state.user.product.loading);
+  const categoryProducts = useSelector(
+    (state) => state.user.product.categoryProducts
+  );
 
   const dispatch = useDispatch();
   const { categoryName } = useParams();
@@ -25,8 +28,10 @@ const CategoryProducts = () => {
         <Loader />
       ) : (
         <BGContent>
-          <CategorySideBar/>
-          <BGProductsList/>
+          <CategorySideBar />
+          {categoryProducts.map((product) => {
+            return <Product key={product._id} product={product} />;
+          })}
         </BGContent>
       )}
     </>
