@@ -69,7 +69,7 @@ const BGProductsList = () => {
     return 0;
   };
 
-  const handleChange = (value) => {
+  const sortHandleChange = (value) => {
     if (value === "none") {
       setSort([...sort]);
     } else {
@@ -106,7 +106,7 @@ const BGProductsList = () => {
 
   return (
     <section>
-      <Sort handleChange={handleChange} />
+      <Sort handleChange={sortHandleChange} />
       <ul className={styles.productsList}>
         {sort.map((product) => {
           const { _id, name, price } = product;

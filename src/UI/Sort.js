@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Sort.module.css";
 
-const Sort = ({ handleChange }) => {
+const Sort = ({ sortHandleChange }) => {
   return (
     <>
       <select
-        onChange={(e) => handleChange(e.target.value)}
+        onChange={(e) => sortHandleChange(e.target.value)}
         className={styles.sortSelect}
       >
         <option value="none">Default sorting</option>
