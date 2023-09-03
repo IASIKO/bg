@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import styles from "./CategoryProducts.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategoryProducts } from "../../../redux/slices/productSlice";
 import { useParams } from "react-router-dom";
@@ -29,9 +30,11 @@ const CategoryProducts = () => {
       ) : (
         <BGContent>
           <CategorySideBar />
-          {categoryProducts.map((product) => {
-            return <Product key={product._id} product={product} />;
-          })}
+          <ul className={styles.productsList}>
+            {categoryProducts.map((product) => {
+              return <Product key={product._id} product={product} />;
+            })}
+          </ul>
         </BGContent>
       )}
     </>
