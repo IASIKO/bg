@@ -1,13 +1,55 @@
 import React from "react";
 import styles from "./Sort.module.css";
 
-const Sort = ({ handleChange }) => {
+const Sort = ({ sort, setSort }) => {
+  const compare = (a, b, ascendingOrder) => {
+    if (a < b) {
+      return ascendingOrder ? -1 : 1;
+    }
+    if (a > b) {
+      return ascendingOrder ? 1 : -1;
+    }
+    return 0;
+  };
 
-  
+  const sortHandleChange = (value) => {
+    if (value === "none") {
+      setSort([...sort]);
+    } else {
+      let toType, toAscending;
+      switch (value) {
+        case "ascending":
+          toType = true;
+          toAscending = true;
+          break;
+        case "descending":
+          toType = true;
+          toAscending = false;
+          break;
+        case "high":
+          toType = false;
+          toAscending = true;
+          break;
+        case "low":
+          toType = false;
+          toAscending = false;
+          break;
+        default:
+          break;
+      }
+      let current = [...sort];
+      current.sort((a, b) =>
+        toType
+          ? compare(a.name, b.name, toAscending)
+          : compare(a.price, b.price, toAscending)
+      );
+      setSort([...current]);
+    }
+  };
   return (
     <>
       <select
-        onChange={(e) => handleChange(e.target.value)}
+        onChange={(e) => sortHandleChange(e.target.value)}
         className={styles.sortSelect}
       >
         <option value="none">Default sorting</option>

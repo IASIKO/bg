@@ -18,10 +18,6 @@ const BGProductsList = () => {
   const [sort, setSort] = useState([]);
   const [isOnBoardGamesPage, setIsOnBoardGamesPage] = useState(false);
 
-  const { currentPage, totalPage } = useSelector(
-    (state) => state.user.product.pagination
-  );
-
   useEffect(() => {
     setIsOnBoardGamesPage(location.pathname.includes("/boardgames"));
   }, [location.pathname]);
@@ -30,7 +26,6 @@ const BGProductsList = () => {
     if (!isOnBoardGamesPage) {
       dispatch(setPagination({ currentPage: 1 }));
     }
-
     const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
     const endIndex = startIndex + pagination.itemsPerPage;
     const visibleProducts = productsData.slice(startIndex, endIndex);
@@ -43,54 +38,9 @@ const BGProductsList = () => {
     dispatch,
   ]);
 
-  const compare = (a, b, ascendingOrder) => {
-    if (a < b) {
-      return ascendingOrder ? -1 : 1;
-    }
-    if (a > b) {
-      return ascendingOrder ? 1 : -1;
-    }
-    return 0;
-  };
-
-  const sortHandleChange = (value) => {
-    if (value === "none") {
-      setSort([...sort]);
-    } else {
-      let toType, toAscending;
-      switch (value) {
-        case "ascending":
-          toType = true;
-          toAscending = true;
-          break;
-        case "descending":
-          toType = true;
-          toAscending = false;
-          break;
-        case "high":
-          toType = false;
-          toAscending = true;
-          break;
-        case "low":
-          toType = false;
-          toAscending = false;
-          break;
-        default:
-          break;
-      }
-      let current = [...sort];
-      current.sort((a, b) =>
-        toType
-          ? compare(a.name, b.name, toAscending)
-          : compare(a.price, b.price, toAscending)
-      );
-      setSort([...current]);
-    }
-  };
-
   return (
     <section>
-      <Sort handleChange={sortHandleChange} />
+      <Sort sort={sort} setSort={setSort} />
       <ul className={styles.productsList}>
         {sort.map((product) => {
           return (
@@ -102,7 +52,7 @@ const BGProductsList = () => {
           );
         })}
       </ul>
-      <Paginate currentPage={currentPage} totalPage={totalPage} />
+      <Paginate />
     </section>
   );
 };
