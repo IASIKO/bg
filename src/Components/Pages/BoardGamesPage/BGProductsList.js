@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./BGProductsList.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setPagination,
-  setSelectedProduct,
-} from "../../../redux/slices/productSlice";
-import { useLocation, useNavigate } from "react-router-dom";
+import { setPagination } from "../../../redux/slices/productSlice";
+import { useLocation } from "react-router-dom";
 import Paginate from "../../../UI/Paginate";
 import Sort from "../../../UI/Sort";
 import Product from "./Product";
@@ -16,7 +13,6 @@ const BGProductsList = () => {
   const cartItems = useSelector((state) => state.user.cart.cartItems);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
 
   const [sort, setSort] = useState([]);
@@ -46,11 +42,6 @@ const BGProductsList = () => {
     pagination.itemsPerPage,
     dispatch,
   ]);
-
-  const onEditHandler = (product) => {
-    dispatch(setSelectedProduct(product));
-    navigate(`/boardgames/edit/:${product._id}`);
-  };
 
   const compare = (a, b, ascendingOrder) => {
     if (a < b) {
@@ -107,7 +98,6 @@ const BGProductsList = () => {
               key={product._id}
               product={product}
               cartItems={cartItems}
-              onEditHandler={onEditHandler}
             />
           );
         })}

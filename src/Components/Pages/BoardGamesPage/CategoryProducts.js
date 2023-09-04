@@ -13,6 +13,7 @@ const CategoryProducts = () => {
   const categoryProducts = useSelector(
     (state) => state.user.product.categoryProducts
   );
+  const cartItems = useSelector((state) => state.user.cart.cartItems);
 
   const dispatch = useDispatch();
   const { categoryName } = useParams();
@@ -32,7 +33,13 @@ const CategoryProducts = () => {
           <CategorySideBar />
           <ul className={styles.productsList}>
             {categoryProducts.map((product) => {
-              return <Product key={product._id} product={product} />;
+              return (
+                <Product
+                  key={product._id}
+                  product={product}
+                  cartItems={cartItems}
+                />
+              );
             })}
           </ul>
         </BGContent>

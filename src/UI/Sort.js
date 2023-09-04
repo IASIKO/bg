@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Sort.module.css";
 
 const Sort = ({ handleChange }) => {
+
+  
   return (
     <>
       <select
