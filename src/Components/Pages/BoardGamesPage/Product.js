@@ -12,7 +12,6 @@ const Product = ({ product, cartItems }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   const isProductInCart = (productId) => {
     return cartItems?.some((item) => item.product._id === productId);
   };
