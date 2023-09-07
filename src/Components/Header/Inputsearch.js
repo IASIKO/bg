@@ -5,7 +5,7 @@ import {
   fetchQueryProducts,
   setSearchResults,
 } from "../../redux/slices/productSlice";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Inputsearch = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -13,8 +13,7 @@ const Inputsearch = () => {
     (state) => state.user.product.searchResults
   );
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const params = useParams();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -31,7 +30,8 @@ const Inputsearch = () => {
 
   const onOptionClickHandler = () => {
     dispatch(fetchQueryProducts(searchValue));
-    navigate(`/${params.bgId}`);
+    console.log(searchResults);
+    // navigate(`/boardgames/categories/${categoryName}/${name}`);
     console.log("kliki");
   };
 

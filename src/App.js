@@ -22,7 +22,6 @@ const App = () => {
       element: <RootLayout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/:bgId", element: <BGDetailPage /> },
         { path: "/boardgames", element: <BoardGamesPage /> },
         { path: "/boardgames/new", element: <BGForm /> },
         { path: "/boardgames/edit/:productId", element: <BGForm /> },
@@ -30,6 +29,7 @@ const App = () => {
           path: "/boardgames/categories/:categoryName",
           element: <CategoryProducts />,
         },
+        { path: "/boardgames/categories/:categoryName/:name", element: <BGDetailPage /> },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },
