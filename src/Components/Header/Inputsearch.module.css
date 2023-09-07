@@ -1,15 +1,41 @@
-input[type=search], select {
-    width: 500px;
-    min-height: 35px;
-    padding: 0 10px;
-    margin: 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: none;
-    border-color: #ddd;
-    outline: none;
-  }
+input[type="search"],
+select {
+  width: 500px;
+  min-height: 35px;
+  padding: 0 10px;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: none;
+  border-color: #ddd;
+  outline: none;
+}
 
-::placeholder{
-    font-size: medium;
+::placeholder {
+  font-size: medium;
+}
+
+option {
+  width: 500px;
+  min-height: 35px;
+  padding: 0 10px;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: none;
+  border-color: #ddd;
+  outline: none;
+}
+
+button {
+  width: auto;
+  padding: 12px 20px;
+  margin: 10px;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+  font-size: medium;
+  font-weight: 500;
 }

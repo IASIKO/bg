@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
 import styles from "./Inputsearch.module.css";
-import Button from "../../UI/Button";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchQueryProducts,
   setSearchResults,
 } from "../../redux/slices/productSlice";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Inputsearch = () => {
   const [searchValue, setSearchValue] = useState("");
-  const dispatch = useDispatch();
-
   const searchResults = useSelector(
     (state) => state.user.product.searchResults
   );
-
-  console.log(searchResults);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const params = useParams();
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -30,16 +29,35 @@ const Inputsearch = () => {
     };
   }, [dispatch, searchValue]);
 
+  const onOptionClickHandler = () => {
+    dispatch(fetchQueryProducts(searchValue));
+    navigate(`/${params.bgId}`);
+    console.log("kliki");
+  };
+
   return (
     <div>
       <input
-        value={searchValue}
         className={styles}
         type="search"
         placeholder="Search here..."
-        onChange={(event) => setSearchValue(event.target.value)}
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        list="brow"
       />
-      <Button>Search</Button>
+      <datalist id="brow">
+        {searchResults.length > 0 && (
+          <>
+            {searchResults.map((product) => (
+              <option
+                key={product._id}
+                value={product.name}
+              >{`${product.name} $${product.price}`}</option>
+            ))}
+          </>
+        )}
+      </datalist>
+      <button onClick={onOptionClickHandler}>Search</button>
     </div>
   );
 };

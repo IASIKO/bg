@@ -107,6 +107,7 @@ const productSlice = createSlice({
       state.error = "couldn't fetch category products";
     });
 
+    
     builder.addCase(fetchQueryProducts.pending, (state) => {
       state.loading = true;
     });
@@ -118,6 +119,7 @@ const productSlice = createSlice({
       state.loading = false;
       state.error = "something went wrong";
     });
+    
   },
 });
 
