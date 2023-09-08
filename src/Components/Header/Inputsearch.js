@@ -19,9 +19,7 @@ const Inputsearch = () => {
     const timerId = setTimeout(() => {
       if (searchValue) {
         dispatch(fetchQueryProducts(searchValue));
-      } else {
-        dispatch(setSearchResults());
-      }
+      } 
     }, 1000);
     return () => {
       clearTimeout(timerId);
@@ -45,16 +43,22 @@ const Inputsearch = () => {
         {isDropdownVisible && (
           <>
             {searchResults.map((product) => (
-              <div key={product._id} className={styles.dropdownItem}>
-                {`${product.name} $${product.price}`}
+              <div
+                key={product._id}
+                className={styles.dropdownItem}
+                onClick={() => {
+                  navigate(`/boardgames/${product.name}`);
+                  dispatch(setSearchResults());
+                  setSearchValue("");
+                }}
+              >
+                {`${product.name} ₾${product.price}`}
               </div>
             ))}
           </>
         )}
       </div>
-      <button onClick={() => navigate(`/boardgames/${searchValue}`)}>
-        Search
-      </button>
+      <button>Search</button>
     </div>
   );
 };
