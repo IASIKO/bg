@@ -28,17 +28,6 @@ const Inputsearch = () => {
 
   const isDropdownVisible = searchValue && searchResults.length > 0;
 
-  const filterBySearch = (event) => {
-    const query = event.target.value.toLowerCase();
-
-    const updatedProducts = searchResults.filter((product) => {
-      return product.name.toLowerCase().indexOf(query) !== -1;
-    });
-
-    setSearchValue(event.target.value);
-    dispatch(setSearchResults(updatedProducts));
-  };
-
   return (
     <div className={styles.dropdawn}>
       <input
@@ -46,7 +35,7 @@ const Inputsearch = () => {
         type="search"
         placeholder="Search here..."
         value={searchValue}
-        onChange={filterBySearch}
+        onChange={(event) => setSearchValue(event.target.value)}
       />
       <div className={styles.dropdownContent}>
         {isDropdownVisible && (
