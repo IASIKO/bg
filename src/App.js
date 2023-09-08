@@ -23,13 +23,13 @@ const App = () => {
       children: [
         { path: "/", element: <Home /> },
         { path: "/boardgames", element: <BoardGamesPage /> },
+        { path: "/boardgames/:name", element: <BGDetailPage /> },
         { path: "/boardgames/new", element: <BGForm /> },
         { path: "/boardgames/edit/:productId", element: <BGForm /> },
         {
           path: "/boardgames/categories/:categoryName",
           element: <CategoryProducts />,
         },
-        { path: "/boardgames/categories/:categoryName/:name", element: <BGDetailPage /> },
         { path: "/giftcards", element: <GiftCardPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/register", element: <Register /> },

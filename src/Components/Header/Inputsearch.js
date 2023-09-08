@@ -5,7 +5,7 @@ import {
   fetchQueryProducts,
   setSearchResults,
 } from "../../redux/slices/productSlice";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Inputsearch = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -13,7 +13,7 @@ const Inputsearch = () => {
     (state) => state.user.product.searchResults
   );
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -28,13 +28,6 @@ const Inputsearch = () => {
     };
   }, [dispatch, searchValue]);
 
-  const onOptionClickHandler = () => {
-    dispatch(fetchQueryProducts(searchValue));
-    console.log(searchResults);
-    // navigate(`/boardgames/categories/${categoryName}/${name}`);
-    console.log("kliki");
-  };
-
   return (
     <div>
       <input
@@ -42,22 +35,23 @@ const Inputsearch = () => {
         type="search"
         placeholder="Search here..."
         value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
+        onChange={(e) => {
+          setSearchValue(e.target.value);
+        }}
         list="brow"
       />
       <datalist id="brow">
         {searchResults.length > 0 && (
           <>
             {searchResults.map((product) => (
-              <option
-                key={product._id}
-                value={product.name}
-              >{`${product.name} $${product.price}`}</option>
+              <option key={product._id} value={product.name}>
+                {`${product.name} $${product.price}`}
+              </option>
             ))}
           </>
         )}
       </datalist>
-      <button onClick={onOptionClickHandler}>Search</button>
+      <button>Search</button>
     </div>
   );
 };

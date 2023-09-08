@@ -47,7 +47,7 @@ const productSlice = createSlice({
     categoryProducts: [],
     pagination: {
       currentPage: 1,
-      itemsPerPage: 2,
+      itemsPerPage: 3,
       totalPages: 1,
     },
     searchResults: [],
@@ -109,7 +109,7 @@ const productSlice = createSlice({
 
     
     builder.addCase(fetchQueryProducts.pending, (state) => {
-      state.loading = true;
+      state.loading = false;
     });
     builder.addCase(fetchQueryProducts.fulfilled, (state, action) => {
       state.loading = false;
