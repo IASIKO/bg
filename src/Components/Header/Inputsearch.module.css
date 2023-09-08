@@ -46,6 +46,7 @@ select {
 .dropdownItem {
   padding: 10px;
   cursor: pointer;
+  border: red;
 }
 
 button {
