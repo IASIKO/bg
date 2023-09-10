@@ -9,8 +9,9 @@
   width: auto;
 }
 
-.li div {
+.li a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .li img {

@@ -4,7 +4,7 @@ import { addToCart, removeFromCart } from "../../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { isUserAdmin } from "../../../application/utilis";
 import { setSelectedProduct } from "../../../redux/slices/productSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Product = ({ product, cartItems }) => {
   const userInfo = useSelector((state) => state.user.user.userData);
@@ -25,11 +25,11 @@ const Product = ({ product, cartItems }) => {
 
   return (
     <li key={_id} className={styles.li}>
-      <div onClick={() => navigate(`/boardgames/${name}`)}>
+      <Link to={`/boardgames/${name}`}>
         <img src={product.image} alt={name} />
         <h2>{name}</h2>
         <p>{price} ₾</p>
-      </div>
+      </Link>
       {isProductInCart(_id) ? (
         <>
           <button onClick={() => dispatch(removeFromCart(product))}>-</button>
