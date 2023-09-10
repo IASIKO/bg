@@ -25,7 +25,7 @@ const Product = ({ product, cartItems }) => {
 
   return (
     <li key={_id} className={styles.li}>
-      <Link to={`/boardgames/${name}`}>
+      <Link to={`/boardgames/${name}`} state={{ id: _id }}>
         <img src={product.image} alt={name} />
         <h2>{name}</h2>
         <p>{price} ₾</p>

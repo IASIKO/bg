@@ -5,7 +5,7 @@ import {
   fetchQueryProducts,
   setSearchResults,
 } from "../../redux/slices/productSlice";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Inputsearch = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -13,7 +13,6 @@ const Inputsearch = () => {
     (state) => state.user.product.searchResults
   );
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -32,7 +31,6 @@ const Inputsearch = () => {
 
   const isDropdownVisible = searchValue && searchResults.length > 0;
 
-
   return (
     <div className={styles.dropdawn}>
       <input
@@ -46,17 +44,19 @@ const Inputsearch = () => {
         {isDropdownVisible && (
           <>
             {filteredResults.map((product) => (
-              <div
+              <Link
+                to={`/boardgames/${product.name}`}
+                state={{ id: product._id }}
                 key={product._id}
-                className={styles.dropdownItem}
-                onClick={() => {
-                  navigate(`/boardgames/${product.name}`);
-                  dispatch(setSearchResults([]));
-                  setSearchValue("");
-                }}
               >
-                {`${product.name} ₾${product.price}`}
-              </div>
+                <div
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    dispatch(setSearchResults([]));
+                    setSearchValue("");
+                  }}
+                >{`${product.name} ₾${product.price}`}</div>
+              </Link>
             ))}
           </>
         )}

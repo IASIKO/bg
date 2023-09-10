@@ -36,6 +36,14 @@ export const fetchQueryProducts = createAsyncThunk(
   }
 );
 
+export const fetchSingleProductById = createAsyncThunk(
+  "product/fetchSingleProductById",
+  async ({ id, category }) => {
+    const { data } = await instance.get(`/products/category/${category}/${id}`);
+    return data;
+  }
+);
+
 const productSlice = createSlice({
   name: "product",
   initialState: {
@@ -51,6 +59,7 @@ const productSlice = createSlice({
       totalPages: 1,
     },
     searchResults: [],
+    singleProduct: null,
   },
   reducers: {
     setSelectedProduct: (state, action) => {
@@ -107,7 +116,6 @@ const productSlice = createSlice({
       state.error = "couldn't fetch category products";
     });
 
-    
     builder.addCase(fetchQueryProducts.pending, (state) => {
       state.loading = false;
     });
@@ -119,10 +127,22 @@ const productSlice = createSlice({
       state.loading = false;
       state.error = "something went wrong";
     });
-    
+
+    builder.addCase(fetchSingleProductById.pending, (state) => {
+      state.loading = false;
+    });
+    builder.addCase(fetchSingleProductById.fulfilled, (state, action) => {
+      state.loading = false;
+      state.singleProduct = action.payload.product;
+    });
+    builder.addCase(fetchSingleProductById.rejected, (state) => {
+      state.loading = false;
+      state.error = "Could not get product";
+    });
   },
 });
 
-export const { setSelectedProduct, setPagination, setSearchResults } = productSlice.actions;
+export const { setSelectedProduct, setPagination, setSearchResults } =
+  productSlice.actions;
 
 export const productReducer = productSlice.reducer;
