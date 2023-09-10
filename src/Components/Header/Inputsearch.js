@@ -26,7 +26,12 @@ const Inputsearch = () => {
     };
   }, [dispatch, searchValue]);
 
+  const filteredResults = searchResults.filter((product) =>
+    product.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
   const isDropdownVisible = searchValue && searchResults.length > 0;
+
 
   return (
     <div className={styles.dropdawn}>
@@ -40,13 +45,13 @@ const Inputsearch = () => {
       <div className={styles.dropdownContent}>
         {isDropdownVisible && (
           <>
-            {searchResults.map((product) => (
+            {filteredResults.map((product) => (
               <div
                 key={product._id}
                 className={styles.dropdownItem}
                 onClick={() => {
                   navigate(`/boardgames/${product.name}`);
-                  dispatch(setSearchResults());
+                  dispatch(setSearchResults([]));
                   setSearchValue("");
                 }}
               >
