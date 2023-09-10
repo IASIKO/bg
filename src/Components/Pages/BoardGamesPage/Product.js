@@ -25,9 +25,11 @@ const Product = ({ product, cartItems }) => {
 
   return (
     <li key={_id} className={styles.li}>
-      <img src={product.image} alt={name} />
-      <h2>{name}</h2>
-      <p>{price} ₾</p>
+      <div onClick={() => navigate(`/boardgames/${name}`)}>
+        <img src={product.image} alt={name} />
+        <h2>{name}</h2>
+        <p>{price} ₾</p>
+      </div>
       {isProductInCart(_id) ? (
         <>
           <button onClick={() => dispatch(removeFromCart(product))}>-</button>

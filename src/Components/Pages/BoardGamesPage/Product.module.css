@@ -9,6 +9,10 @@
   width: auto;
 }
 
+.li div {
+  cursor: pointer;
+}
+
 .li img {
   margin-bottom: 0.8em;
   max-width: 100%;
