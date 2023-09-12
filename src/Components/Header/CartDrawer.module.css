@@ -18,9 +18,20 @@
 }
 
 .closeButton {
-  background-color: #ff0000;
+  width: auto;
+  padding: 12px 20px;
+  margin: 10px;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
   color: white;
-  border: none;
-  padding: 10px 20px;
+  background-color: black;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.closeButton:hover {
   cursor: pointer;
+  color: white;
+  background-color: rgb(241, 132, 54);
 }
