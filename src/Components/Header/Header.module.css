@@ -1,3 +1,7 @@
+header {
+    position: fixed;
+}
+
 .wrapper {
     height: 85px;
     background-color: rgb(36, 44, 52);

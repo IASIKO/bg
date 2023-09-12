@@ -8,6 +8,12 @@ import { useSelector } from "react-redux";
 
 const EcommerceNavbar = () => {
   const userInfo = useSelector((state) => state.user.user.userData);
+  const cartItems = useSelector((state) => state.user.cart.cartItems);
+
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   return (
     <div className={styles.eContainer}>
@@ -34,7 +40,7 @@ const EcommerceNavbar = () => {
       <div className={styles.cartIcon}>
         <i>
           <ImCart />
-          <span>0</span>
+          <span>{totalQuantity}</span>
         </i>
       </div>
     </div>

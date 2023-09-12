@@ -7,14 +7,14 @@ import Navbar from "./Navbar/Navbar";
 
 const Header = () => {
   return (
-    <>
+    <header>
       <div className={styles.wrapper}>
         <Logo />
         <Inputsearch />
         <EcommerceNavbar />
       </div>
       <Navbar />
-    </>
+    </header>
   );
 };
 
