@@ -2,6 +2,7 @@
   width: 150px;
   display: flex;
   justify-content: space-around;
+  position: relative;
 }
 .eContainer i {
   color: white;
@@ -28,4 +29,9 @@
 
 .cartIcon :hover {
   color: rgb(129, 138, 145);
+}
+
+.cartDrawer {
+  position: absolute;
+  right: 0;
 }
