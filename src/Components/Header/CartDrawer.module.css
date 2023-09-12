@@ -1,12 +1,12 @@
 .cart {
-  width: 300px;
+  width: 350px;
   height: 100%;
   position: fixed;
   top: 0;
   right: -300px;
   background-color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease-in-out;
+  transition: right 0.7s ease-in-out;
 }
 
 .cart.open {

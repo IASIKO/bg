@@ -30,8 +30,3 @@
 .cartIcon :hover {
   color: rgb(129, 138, 145);
 }
-
-.cartDrawer {
-  position: absolute;
-  right: 0;
-}

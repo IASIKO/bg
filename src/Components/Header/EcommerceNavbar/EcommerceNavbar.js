@@ -49,12 +49,10 @@ const EcommerceNavbar = () => {
         </div>
       </div>
       {isCartOpen && (
-        <div className={styles.cartDrawer}>
           <CartDrawer
             isOpen={isCartOpen}
             isClose={() => setIsCartOpen(false)}
           />
-        </div>
       )}
     </>
   );
