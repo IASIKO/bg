@@ -4,10 +4,11 @@ import logo from "../../Assets/logo.png";
 
 const Cover = () => {
   return (
-    <section className={styles.cover}>
-      <div className={styles.backgroundOverlay}></div>
-      <img src={logo} alt="logo" />
-    </section>
+    <div className={styles.cover}>
+      <div className={styles.backgroundOverlay}>
+        <img src={logo} alt="logo" />
+      </div>
+    </div>
   );
 };
 
