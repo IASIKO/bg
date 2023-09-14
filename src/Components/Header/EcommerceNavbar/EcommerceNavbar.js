@@ -48,10 +48,7 @@ const EcommerceNavbar = () => {
           </i>
         </div>
       </div>
-          <CartDrawer
-            isOpen={isCartOpen}
-            isClose={() => setIsCartOpen(false)}
-          />
+      <CartDrawer isOpen={isCartOpen} isClose={() => setIsCartOpen(false)} />
     </>
   );
 };
