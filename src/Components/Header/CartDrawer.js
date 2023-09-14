@@ -6,7 +6,10 @@ const CartDrawer = ({ isOpen, isClose }) => {
   return (
     <div className={`${styles.cart} ${isOpen ? styles.open : ""}`}>
       <div className={styles.cartContent}></div>
-      <div className={styles.close} onClick={isClose}>
+      <div
+        className={`${styles.close} ${isOpen ? styles.open : ""}`}
+        onClick={isClose}
+      >
         <GrClose />
       </div>
     </div>

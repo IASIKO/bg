@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-around;
   position: relative;
+  margin-right: 30px;
 }
 .eContainer i {
   color: white;
