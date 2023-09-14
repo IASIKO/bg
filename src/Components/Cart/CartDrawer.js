@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CartDrawer.module.css";
 import { GrClose } from "react-icons/gr";
+import CartContent from "./CartContent";
 
 const CartDrawer = ({ isOpen, isClose }) => {
   return (
@@ -9,6 +10,7 @@ const CartDrawer = ({ isOpen, isClose }) => {
       <div className={styles.close} onClick={isClose}>
         <GrClose />
       </div>
+      <CartContent />
     </div>
   );
 };

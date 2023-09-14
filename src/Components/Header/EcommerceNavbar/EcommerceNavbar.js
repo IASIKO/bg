@@ -5,7 +5,7 @@ import { RxPerson } from "react-icons/rx";
 import { FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import CartDrawer from "../CartDrawer";
+import CartDrawer from "../../Cart/CartDrawer";
 
 const EcommerceNavbar = () => {
   const userInfo = useSelector((state) => state.user.user.userData);
