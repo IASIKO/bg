@@ -1,12 +1,18 @@
-.cartInfo {
-  margin-left: 20px;
+.cartContent {
   padding: 20px;
+  margin-left: 20px;
+}
+
+.cartInfo {
   display: grid;
-  grid-template-columns: 28% auto;
-  grid-template-rows: auto;
+  grid-template-areas:
+    "img h4 h4 h4"
+    "img p p p";
+  gap: 10px;
 }
 
 .cartInfo img {
+  grid-area: img;
   width: 72.8px;
   height: auto;
   max-width: 100%;
@@ -16,11 +22,16 @@
 }
 
 .cartInfo h4 {
+  grid-area: h4;
   font-family: sans-serif;
   font-weight: 600;
   color: #898989;
 }
 
+.cartInfo p {
+  grid-area: p;
+}
+
 hr {
-    width: 75%;
+  color: #d5d8dc;
 }

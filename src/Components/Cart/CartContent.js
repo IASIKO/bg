@@ -5,10 +5,8 @@ import { useSelector } from "react-redux";
 const CartContent = () => {
   const cartItems = useSelector((state) => state.user.cart.cartItems);
 
-  console.log(cartItems);
-
   return (
-    <div>
+    <div className={styles.cartContent}>
       {cartItems.map((item) => (
         <React.Fragment key={item.product._id}>
           <div className={styles.cartInfo}>
