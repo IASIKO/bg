@@ -36,6 +36,7 @@ hr {
 }
 
 .empty {
-    font-family: sans-serif;
-    font-weight: 600;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 14px;
 }
