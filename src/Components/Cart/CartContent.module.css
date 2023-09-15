@@ -28,6 +28,14 @@
   grid-area: p;
   margin: 5px;
   color: #d5d8dc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartInfo i {
+  color: #898989;
+  cursor: pointer;
+  font-size: 30px;
 }
 
 hr {
@@ -40,4 +48,12 @@ hr {
   font-weight: 600;
   font-size: 14px;
   color: #4b4f58;
+}
+
+.subtotal {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: #4B4F58;
+  font-family: sans-serif;
 }

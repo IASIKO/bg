@@ -2,11 +2,16 @@ import React from "react";
 import styles from "./CartContent.module.css";
 import { useSelector } from "react-redux";
 import Total from "./Total";
+import { TiDeleteOutline } from "react-icons/ti";
 
 const CartContent = () => {
   const cartItems = useSelector((state) => state.user.cart.cartItems);
 
-  const isProductInCart = cartItems.length;
+  const isProductInCart = cartItems.length > 0;
+
+  const deleteItemHandler = () => {
+    
+  }
 
   return (
     <div className={styles.cartContent}>
@@ -18,6 +23,9 @@ const CartContent = () => {
               <h4>{item.product.name}</h4>
               <p>
                 {item.quantity} x $ {item.product.price}
+                <i onClick={deleteItemHandler}>
+                  <TiDeleteOutline />
+                </i>
               </p>
             </div>
             <hr />
@@ -26,7 +34,12 @@ const CartContent = () => {
       ) : (
         <p className={styles.empty}>No products in the cart.</p>
       )}
-      {isProductInCart && <Total cartItems={cartItems} />}
+      {isProductInCart && (
+        <div className={styles.subtotal}>
+          Subtotal: <Total cartItems={cartItems} /> ₾
+          <hr />
+        </div>
+      )}
     </div>
   );
 };
