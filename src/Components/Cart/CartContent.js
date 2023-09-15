@@ -1,17 +1,20 @@
 import React from "react";
 import styles from "./CartContent.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Total from "./Total";
 import { TiDeleteOutline } from "react-icons/ti";
+import { clearCart } from "../../redux/slices/cartSlice";
 
 const CartContent = () => {
   const cartItems = useSelector((state) => state.user.cart.cartItems);
 
+  const dispatch = useDispatch();
+
   const isProductInCart = cartItems.length > 0;
 
-  const deleteItemHandler = () => {
-    
-  }
+  const deleteItemHandler = (id) => {
+    dispatch(clearCart(id));
+  };
 
   return (
     <div className={styles.cartContent}>
@@ -23,7 +26,7 @@ const CartContent = () => {
               <h4>{item.product.name}</h4>
               <p>
                 {item.quantity} x $ {item.product.price}
-                <i onClick={deleteItemHandler}>
+                <i onClick={() => deleteItemHandler(item.product._id)}>
                   <TiDeleteOutline />
                 </i>
               </p>
