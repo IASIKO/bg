@@ -53,8 +53,8 @@ const cartSlice = createSlice({
       }
       state.cartItems = updatedCart;
     },
-    clearCart: (state) => {
-      state.cartItems = [];
+    clearCart: (state, action) => {
+      state.cartItems = action.payload;
     },
   },
 });

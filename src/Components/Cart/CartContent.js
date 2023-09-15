@@ -7,13 +7,16 @@ import { clearCart } from "../../redux/slices/cartSlice";
 
 const CartContent = () => {
   const cartItems = useSelector((state) => state.user.cart.cartItems);
-
   const dispatch = useDispatch();
 
   const isProductInCart = cartItems.length > 0;
 
   const deleteItemHandler = (id) => {
-    dispatch(clearCart(id));
+    const updatedCartItems = cartItems.filter(
+      (item) => item.product._id !== id
+    );
+
+    dispatch(clearCart(updatedCartItems));
   };
 
   return (
