@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./CartContent.module.css";
 import { useSelector } from "react-redux";
+import Total from "./Total";
 
 const CartContent = () => {
   const cartItems = useSelector((state) => state.user.cart.cartItems);
+
+  const isProductInCart = cartItems.length;
 
   return (
     <div className={styles.cartContent}>
@@ -23,6 +26,7 @@ const CartContent = () => {
       ) : (
         <p className={styles.empty}>No products in the cart.</p>
       )}
+      {isProductInCart && <Total cartItems={cartItems} />}
     </div>
   );
 };
