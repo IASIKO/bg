@@ -19,6 +19,11 @@ const CartContent = () => {
     dispatch(clearCart(updatedCartItems));
   };
 
+  const onOrderClickHandler = () => {
+    dispatch(clearCart([]));
+    console.log("Order sucssesful");
+  };
+
   return (
     <div className={styles.cartContent}>
       {cartItems.length > 0 ? (
@@ -44,6 +49,7 @@ const CartContent = () => {
         <div className={styles.subtotal}>
           Subtotal: <Total cartItems={cartItems} /> ₾
           <hr />
+          <button onClick={onOrderClickHandler}>Order</button>
         </div>
       )}
     </div>
