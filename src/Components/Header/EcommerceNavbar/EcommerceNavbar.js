@@ -48,6 +48,12 @@ const EcommerceNavbar = () => {
           </i>
         </div>
       </div>
+      {isCartOpen && (
+        <div
+          className={styles.backdrop}
+          onClick={() => setIsCartOpen(false)}
+        ></div>
+      )}
       <CartDrawer isOpen={isCartOpen} isClose={() => setIsCartOpen(false)} />
     </>
   );

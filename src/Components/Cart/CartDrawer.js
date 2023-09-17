@@ -5,16 +5,13 @@ import CartContent from "./CartContent";
 
 const CartDrawer = ({ isOpen, isClose }) => {
   return (
-    <>
-      <div className={`${styles.cart} ${isOpen ? styles.open : ""}`}>
-      <div className={styles.backdrop} onClick={isClose}></div>
-        <div className={styles.cartContent}></div>
-        <div className={styles.close} onClick={isClose}>
-          <GrClose />
-        </div>
-        <CartContent />
+    <div className={`${styles.cart} ${isOpen ? styles.open : ""}`}>
+      <div className={styles.cartContent}></div>
+      <div className={styles.close} onClick={isClose}>
+        <GrClose />
       </div>
-    </>
+      <CartContent />
+    </div>
   );
 };
 
