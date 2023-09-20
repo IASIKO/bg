@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { fetchSingleProductById } from "../../redux/slices/productSlice";
 import Body from "../../UI/Body";
 import Loader from "../../UI/Loader";
+import SingleProductPage from "./Single Page/SingleProductPage";
 
 const BGDetailPage = () => {
   const singleProduct = useSelector(
@@ -11,9 +12,6 @@ const BGDetailPage = () => {
   );
   const isLoading = useSelector((state) => state.user.product.loading);
 
-  console.log(singleProduct);
-  const params = useParams();
-  console.log(params);
   const { state } = useLocation();
   const dispatch = useDispatch();
 
@@ -21,7 +19,17 @@ const BGDetailPage = () => {
     dispatch(fetchSingleProductById({ id: state.id }));
   }, [dispatch, state.id]);
 
-  return <>{isLoading ? <Loader /> : <Body>{singleProduct?.name}</Body>}</>;
+  return (
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Body>
+          <SingleProductPage singleProduct={singleProduct} />
+        </Body>
+      )}
+    </>
+  );
 };
 
 export default BGDetailPage;
