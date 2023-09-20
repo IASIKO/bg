@@ -129,7 +129,7 @@ const productSlice = createSlice({
     });
 
     builder.addCase(fetchSingleProductById.pending, (state) => {
-      state.loading = false;
+      state.loading = true;
     });
     builder.addCase(fetchSingleProductById.fulfilled, (state, action) => {
       state.loading = false;
