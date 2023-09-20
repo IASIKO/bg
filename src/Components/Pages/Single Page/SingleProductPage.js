@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../../redux/slices/cartSlice";
 
 const SingleProductPage = ({ singleProduct }) => {
-  const cartItems = useSelector((state) => state.user.product.cartItems);
+  const cartItems = useSelector((state) => state.user.cart.cartItems);
   const dispatch = useDispatch();
 
   const isProductInCart = (productId) => {
