@@ -1,8 +1,16 @@
 import React from "react";
 import styles from "./SingleProductPage.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../../redux/slices/cartSlice";
 
 const SingleProductPage = ({ singleProduct }) => {
-  console.log(singleProduct);
+  const cartItems = useSelector((state) => state.user.product.cartItems);
+  const dispatch = useDispatch();
+
+  const isProductInCart = (productId) => {
+    return cartItems?.some((item) => item.product._id === productId);
+  };
+
   return (
     <div className={styles.productDetail}>
       <div className={styles.productImage}>
@@ -17,7 +25,23 @@ const SingleProductPage = ({ singleProduct }) => {
           Category: {singleProduct?.category}
         </p>
         <p className={styles.productPrice}>{singleProduct?.price} ₾</p>
-        <button className={styles.addToCartButton}>Add to Cart</button>
+        {isProductInCart(singleProduct?._id) ? (
+          <>
+            <button onClick={() => dispatch(removeFromCart(singleProduct))}>
+              -
+            </button>
+            <button onClick={() => dispatch(addToCart(singleProduct))}>
+              +
+            </button>
+          </>
+        ) : (
+          <button
+            className={styles.addToCartButton}
+            onClick={() => dispatch(addToCart(singleProduct))}
+          >
+            Add to Cart
+          </button>
+        )}
       </div>
     </div>
   );
