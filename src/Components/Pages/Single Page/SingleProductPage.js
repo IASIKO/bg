@@ -11,6 +11,10 @@ const SingleProductPage = ({ singleProduct }) => {
     return cartItems?.some((item) => item.product._id === productId);
   };
 
+  const initialQuantity =
+    cartItems.find((item) => item.product._id === singleProduct._id)
+      ?.quantity || 0;
+
   return (
     <div className={styles.productDetail}>
       <div className={styles.productImage}>
@@ -26,14 +30,19 @@ const SingleProductPage = ({ singleProduct }) => {
         </p>
         <p className={styles.productPrice}>{singleProduct?.price} ₾</p>
         {isProductInCart(singleProduct?._id) ? (
-          <>
-            <button onClick={() => dispatch(removeFromCart(singleProduct))}>
+          <div className={styles.quantity}>
+            <button
+              onClick={() => dispatch(removeFromCart(singleProduct))}
+            >
               -
             </button>
-            <button onClick={() => dispatch(addToCart(singleProduct))}>
+            <h1>x{initialQuantity}</h1>
+            <button
+              onClick={() => dispatch(addToCart(singleProduct))}
+            >
               +
             </button>
-          </>
+          </div>
         ) : (
           <button
             className={styles.addToCartButton}

@@ -53,6 +53,10 @@
   background-color: black;
 }
 
+.quantity {
+  display: flex;
+}
+
 @media (max-width: 768px) {
   .productDetail {
     flex-direction: column;
