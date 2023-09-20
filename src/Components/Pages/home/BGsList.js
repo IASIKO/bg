@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import styles from "./BGsList.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchProducts,
-} from "../../../redux/slices/productSlice";
+import { fetchProducts } from "../../../redux/slices/productSlice";
 import Loader from "../../../UI/Loader";
+import { Link } from "react-router-dom";
 
 const BGsList = () => {
   const productsData = useSelector((state) => state.user.product.productsData);
@@ -27,9 +26,14 @@ const BGsList = () => {
             {productsData.map((product) => {
               return (
                 <li key={product._id}>
-                  <img src={product.image} alt={product.name} />
-                  <h2>{product.name}</h2>
-                  <p>{product.price} ₾</p>
+                  <Link
+                    to={`/boardgames/${product.name}`}
+                    state={{ id: product._id }}
+                  >
+                    <img src={product.image} alt={product.name} />
+                    <h2>{product.name}</h2>
+                    <p>{product.price} ₾</p>
+                  </Link>
                 </li>
               );
             })}

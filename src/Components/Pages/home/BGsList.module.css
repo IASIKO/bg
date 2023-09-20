@@ -25,6 +25,11 @@
   width: auto;
 }
 
+.productsList li a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .productsList li img {
   margin-bottom: 0.8em;
   width: 100%;
