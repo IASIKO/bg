@@ -15,6 +15,7 @@
   background-color: #101317;
   opacity: 0.92;
   position: absolute;
+
 }
 
 .divFlex {
@@ -99,11 +100,10 @@
     width: 100%;
     padding: 15px;
   }
-  
+
   .footerC {
     width: 100%;
     padding: 15px;
-    margin-top: 15px;
   }
 }
 

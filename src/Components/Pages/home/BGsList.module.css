@@ -12,6 +12,7 @@
   grid-template-columns: repeat(4, 1fr);
   list-style: none outside;
   margin: 0;
+  padding-left: 0;
 }
 
 .productsList li {
@@ -57,26 +58,16 @@
   .productsList {
     grid-template-columns: repeat(1, 1fr);
   }
-
-  .productsList li {
-    width: 100%;
-  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   .productsList {
     grid-template-columns: repeat(2, 1fr);
   }
-  .productsList li {
-    width: 100%;
-  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .productsList {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .productsList li {
-    width: 100%;
   }
 }
