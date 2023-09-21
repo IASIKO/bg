@@ -44,6 +44,42 @@
   font-size: 2rem;
   font-weight: 400;
   color: #3a3a3a;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0;
+  }
+
+  .outlet {
+    width: 90%;
+    margin-top: 30px
+  }
+
+  .myAccountContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .myAccountContainer a {
+    width: auto;
+    margin: 5px;
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .myAccountTitle {
+    font-size: 1.5rem;
+  }
+
+  .myAccountContainer a {
+    width: auto;
+    margin: 5px;
+    font-size: 85%;
+  }
 }
