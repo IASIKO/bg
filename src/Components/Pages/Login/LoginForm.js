@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LoginForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useForm from "../../../application/hooks/useForm";
 import { authanticateUser } from "../../../redux/slices/userSlice";
 import InputForm from "../../../UI/InputForm";
@@ -32,6 +32,8 @@ const LoginForm = () => {
     defaultFormValues: generateLoginFormValues(),
   });
 
+  const formError = useSelector((state) => state.user.user.formError);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -60,11 +62,12 @@ const LoginForm = () => {
         <InputForm
           name="password"
           label="Password"
-          type='password'
+          type="password"
           value={loginFormValues.password.value}
           onChange={onInputChange}
           error={loginFormValues.password.error}
-        />
+          />
+      {formError && <div className={styles.alertError}>{formError}</div>}
         <div className={styles.actions}>
           <Link to="/register">Don't have an account? Sign Up here.</Link>
           <button>Login</button>

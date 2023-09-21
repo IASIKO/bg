@@ -48,6 +48,13 @@
   color: rgb(241, 132, 54);
 }
 
+.alertError {
+  width: 250px;
+  text-align: center;
+  margin: auto;
+  color: red;
+}
+
 
 @media (max-width: 480px) {
   .form {

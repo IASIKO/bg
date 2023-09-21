@@ -9,10 +9,8 @@ export const authanticateUser = createAsyncThunk(
       const { data } = await instance.post(route, values.formValues);
       localStorage.setItem("token", data.token);
       localStorage.setItem("refresh_token", data.refreshToken);
-      // console.log(data);
       return data;
     } catch (error) {
-      console.log("error", error);
       throw error;
     }
   }
@@ -24,6 +22,7 @@ const userSlice = createSlice({
     loading: false,
     userData: null,
     error: null,
+    formError: '',
   },
 
   reducers: {
@@ -37,14 +36,16 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(authanticateUser.pending, (state) => {
       state.loading = true;
+      state.formError = "";
     });
     builder.addCase(authanticateUser.fulfilled, (state, action) => {
       state.loading = false;
       state.userData = action.payload.user;
     });
-    builder.addCase(authanticateUser.rejected, (state, action) => {
+    builder.addCase(authanticateUser.rejected, (state) => {
       state.loading = false;
       state.error = "Something went wrong!";
+      state.formError = "Email or password is incorrect";
     });
   },
 });
