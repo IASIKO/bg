@@ -38,7 +38,7 @@ const GiftCardContent = () => {
       <h1 className={styles.giftTitle}>Gift cards</h1>
       <ul className={styles.giftContainer}>
         {giftCards.map((card) => (
-          <li key={card.id}>
+          <li key={card.id} className={styles.card}>
             <img src={card.image} alt={card.name} />
             <h2>{card.name}</h2>
             <p>{card.price} ₾</p>
