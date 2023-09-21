@@ -35,3 +35,23 @@
   font-weight: 600;
   padding: 15px;
 }
+
+@media (max-width: 1024px) {
+  .sidebarWrapper {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebarWrapper {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebarWrapper {
+    width: 100%;
+  }
+}

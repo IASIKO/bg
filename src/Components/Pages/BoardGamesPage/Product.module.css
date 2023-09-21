@@ -55,3 +55,71 @@
   color: white;
   background-color: rgb(241, 132, 54);
 }
+
+@media (max-width: 480px) {
+  .li {
+    padding: 15px;
+  }
+
+  .li h2 {
+    font-size: 0.9em;
+  }
+
+  .li p {
+    font-size: 14px;
+  }
+
+  .li button {
+    padding: 10px 15px;
+    margin: 8px;
+    font-size: small;
+  }
+}
+
+@media (max-width: 768px) {
+  .li {
+    padding: 10px;
+  }
+
+  .li img {
+    margin-bottom: 0.5em;
+  }
+
+  .li h2 {
+    font-size: 0.8em;
+  }
+
+  .li p {
+    font-size: 12px;
+  }
+
+  .li button {
+    padding: 8px 12px;
+    margin: 6px;
+    font-size: x-small;
+  }
+}
+
+@media (max-width: 1024px) {
+  .li {
+    padding: 15px 10px;
+  }
+
+  .li img {
+    margin-bottom: 0.6em;
+  }
+
+  .li h2 {
+    font-size: 0.9em;
+  }
+
+  .li p {
+    font-size: 14px;
+  }
+
+  .li button {
+    padding: 10px 15px;
+    margin: 8px;
+    font-size: small;
+  }
+}
