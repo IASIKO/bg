@@ -1,3 +1,7 @@
+.searchInputWrapper {
+  display: flex;
+}
+
 .searchInput {
   width: 500px;
   min-height: 35px;
@@ -53,4 +57,16 @@ button:hover {
   cursor: pointer;
   color: white;
   background-color: rgb(241, 132, 54);
+}
+
+@media (max-width: 768px) {
+  .searchInput {
+    width: 300px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .searchInput {
+    width: 100px;
+  }
 }

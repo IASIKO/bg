@@ -3,3 +3,23 @@
     height: 85px;
     margin-left: 20px;
 }
+
+.logo img {
+    width: 85px;
+    height: 85px;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .logo img {
+      width: 65px; 
+      height: 65px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo img {
+      width: 45px; 
+      height: 45px;
+    }
+  }

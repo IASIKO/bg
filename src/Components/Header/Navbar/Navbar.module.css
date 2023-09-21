@@ -3,7 +3,7 @@
   background-color: white;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.16);
 }
 
 .pageContainer {
@@ -86,4 +86,46 @@
 .icon:hover {
   color: rgb(241, 132, 54);
   cursor: pointer;
+}
+
+
+@media (max-width: 480px) {
+  .navbarWrapper {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .pageContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pageTitle a {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .pageContainer {
+    justify-content: center; 
+  }
+
+  .pageTitle a {
+    font-size: 14px; 
+    padding: 10px;
+  }
+
+  .infoContainer {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbarWrapper {
+    padding: 10px;
+  }
+
+  .pageTitle a {
+    padding: 15px;
+  }
 }

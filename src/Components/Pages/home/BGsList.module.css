@@ -53,26 +53,6 @@
   color: #4a4a4a;
 }
 
-.productsList li button {
-  width: 100px;
-  padding: 12px 20px;
-  margin: 0 5px;
-  border: 0;
-  border-radius: 5px;
-  box-sizing: border-box;
-  color: white;
-  background-color: black;
-  font-size: medium;
-  font-weight: 500;
-}
-
-.productsList li button:hover {
-  cursor: pointer;
-  color: white;
-  background-color: rgb(241, 132, 54);
-}
-
-
 @media (max-width: 480px) {
   .productsList {
     grid-template-columns: repeat(1, 1fr);
@@ -87,10 +67,16 @@
   .productsList {
     grid-template-columns: repeat(2, 1fr);
   }
+  .productsList li {
+    width: 100%;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .productsList {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .productsList li {
+    width: 100%;
   }
 }

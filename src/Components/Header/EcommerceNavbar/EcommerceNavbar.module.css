@@ -41,3 +41,16 @@
 .cartIcon :hover {
   color: rgb(129, 138, 145);
 }
+
+@media (max-width: 768px) {
+  .eContainer {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .eContainer {
+    width: 80px;
+  }
+}
+

@@ -32,36 +32,38 @@ const Inputsearch = () => {
   const isDropdownVisible = searchValue && searchResults.length > 0;
 
   return (
-    <div className={styles.dropdawn}>
-      <input
-        className={styles.searchInput}
-        type="search"
-        placeholder="Search here..."
-        value={searchValue}
-        onChange={(event) => setSearchValue(event.target.value)}
-      />
-      <div className={styles.dropdownContent}>
-        {isDropdownVisible && (
-          <>
-            {filteredResults.map((product) => (
-              <Link
-                to={`/boardgames/${product.name}`}
-                state={{ id: product._id }}
-                key={product._id}
-              >
-                <div
-                  className={styles.dropdownItem}
-                  onClick={() => {
-                    dispatch(setSearchResults([]));
-                    setSearchValue("");
-                  }}
-                >{`${product.name} ₾${product.price}`}</div>
-              </Link>
-            ))}
-          </>
-        )}
+    <div className={styles.searchInputWrapper}>
+      <div className={styles.dropdown}>
+        <input
+          className={styles.searchInput}
+          type="search"
+          placeholder="Search here..."
+          value={searchValue}
+          onChange={(event) => setSearchValue(event.target.value)}
+        />
+        <div className={styles.dropdownContent}>
+          {isDropdownVisible && (
+            <>
+              {filteredResults.map((product) => (
+                <Link
+                  to={`/boardgames/${product.name}`}
+                  state={{ id: product._id }}
+                  key={product._id}
+                >
+                  <div
+                    className={styles.dropdownItem}
+                    onClick={() => {
+                      dispatch(setSearchResults([]));
+                      setSearchValue("");
+                    }}
+                  >{`${product.name} ₾${product.price}`}</div>
+                </Link>
+              ))}
+            </>
+          )}
+        </div>
+        <button>Search</button>
       </div>
-      <button>Search</button>
     </div>
   );
 };

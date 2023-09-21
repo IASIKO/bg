@@ -3,7 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 283px;
+  height: 285px;
   overflow: hidden;
   background-attachment: fixed;
   position: relative;
@@ -85,4 +85,49 @@
 
 .footerC a:hover {
   color: #494848;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    height: 320px;
+  }
+  .divFlex {
+    flex-direction: column;
+  }
+
+  .footerList {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .footerC {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: 340px;
+  }
+  .footerList {
+    font-size: 14px;
+  }
+
+  .footerC {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    height: 340px;
+  }
+  .footerList,
+  .footerC {
+    padding: 10px;
+    margin-top: 15px;
+  }
 }
