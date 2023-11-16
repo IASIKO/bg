@@ -12,7 +12,7 @@ const SingleProductPage = ({ singleProduct }) => {
   };
 
   const initialQuantity =
-    cartItems.find((item) => item.product._id === singleProduct._id)
+    cartItems.find((item) => item.product?._id === singleProduct?._id)
       ?.quantity || 0;
 
   return (
