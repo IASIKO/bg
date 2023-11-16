@@ -52,7 +52,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles.pageTitle}>
-          <a href="language">
+          <a href="/">
             <img src={UK} alt="UK" />
             ENG
           </a>
