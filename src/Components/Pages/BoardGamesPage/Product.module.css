@@ -61,6 +61,10 @@
     padding: 15px;
   }
 
+  .li img {
+    margin: 0 auto;
+  }
+
   .li h2 {
     font-size: 0.9em;
   }
