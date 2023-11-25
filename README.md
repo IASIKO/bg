@@ -2,10 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# bg
-
-Welcome to the **bg** repository! This project is in the building process.
-
 ## Project Overview
 
 The **bg** is an e-commerce web application for board games.
@@ -23,7 +19,6 @@ The **bg** is an e-commerce web application for board games.
 To run this project locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/IASIKO/bg`
-2. Navigate to the project directory: `cd bg`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 
@@ -32,8 +27,7 @@ To run this project locally, follow these steps:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## libraries
 
 Loader - npm install i framer-motion
 
@@ -56,7 +50,7 @@ Back-end repository URL : https://github.com/IASIKO/ecommerce-app-api-master
 Runs the app in the development mode.\
 [http://localhost:3001]
 
-connect env file your mongodDB cluster.
+connect env file your mongoDB cluster.
 
 
 
