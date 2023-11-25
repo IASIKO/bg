@@ -45,4 +45,19 @@ icons - react-icons npm install react-icons
 
 route - npm install react-router-dom
 
-redux
+redux-toolkit
+
+## Back-end part
+
+Back-end repository URL : https://github.com/IASIKO/ecommerce-app-api-master
+
+### `npm start`
+
+Runs the app in the development mode.\
+[http://localhost:3001]
+
+connect env file your mongodDB cluster.
+
+
+
+
